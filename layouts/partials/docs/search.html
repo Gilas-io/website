@@ -1,0 +1,27 @@
+<div>
+  <a style="color: blue; font-size: 15px" href="https://dashboard.gilas.io/">ورود</a><span> &nbsp;| &nbsp;</span> <a style="color: blue; font-size: 15px" href="https://dashboard.gilas.io/">ثبت‌نام</a>
+</div>
+<br/>
+{{ if default true .Site.Params.BookSearch }}
+<div class="magic">
+    <div class="book-search">
+      <input type="text" id="book-search-input" placeholder="{{ i18n "Search" }}" aria-label="{{ i18n "Search" }}" maxlength="64" data-hotkeys="s/" />
+      <div class="book-search-spinner hidden"></div>
+      <ul id="book-search-results"></ul>
+    </div>
+
+     <div class="js-toggle-wrapper">
+      <div class="js-toggle">
+          <div class="js-toggle-track">
+              <div class="js-toggle-track-check">
+                    <img src="data:image/svg+xml;base64,PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KDTwhLS0gVXBsb2FkZWQgdG86IFNWRyBSZXBvLCB3d3cuc3ZncmVwby5jb20sIFRyYW5zZm9ybWVkIGJ5OiBTVkcgUmVwbyBNaXhlciBUb29scyAtLT4KPHN2ZyB3aWR0aD0iODAwcHgiIGhlaWdodD0iODAwcHgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBzdHJva2U9IiNmZmZmZmYiPgoNPGcgaWQ9IlNWR1JlcG9fYmdDYXJyaWVyIiBzdHJva2Utd2lkdGg9IjAiLz4KDTxnIGlkPSJTVkdSZXBvX3RyYWNlckNhcnJpZXIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgoNPGcgaWQ9IlNWR1JlcG9faWNvbkNhcnJpZXIiPiA8ZyBjbGlwLXBhdGg9InVybCgjYSkiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCI+IDxwYXRoIGQ9Ik01IDEySDFNMjMgMTJoLTRNNy4wNSA3LjA1IDQuMjIyIDQuMjIyTTE5Ljc3OCAxOS43NzggMTYuOTUgMTYuOTVNNy4wNSAxNi45NWwtMi44MjggMi44MjhNMTkuNzc4IDQuMjIyIDE2Ljk1IDcuMDUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPiA8cGF0aCBkPSJNMTIgMTZhNCA0IDAgMSAwIDAtOCA0IDQgMCAwIDAgMCA4WiIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIuMTYiLz4gPHBhdGggZD0iTTEyIDE5djRNMTIgMXY0IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4gPC9nPiA8ZGVmcz4gPGNsaXBQYXRoIGlkPSJhIj4gPHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTAgMGgyNHYyNEgweiIvPiA8L2NsaXBQYXRoPiA8L2RlZnM+IDwvZz4KDTwvc3ZnPg==" role="presentation" style="pointer-events: none;" width="23" height="23">
+              </div>
+              <div class="js-toggle-track-x">
+                    <img src="data:image/svg+xml;base64,PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KDTwhLS0gVXBsb2FkZWQgdG86IFNWRyBSZXBvLCB3d3cuc3ZncmVwby5jb20sIFRyYW5zZm9ybWVkIGJ5OiBTVkcgUmVwbyBNaXhlciBUb29scyAtLT4KPHN2ZyB3aWR0aD0iODAwcHgiIGhlaWdodD0iODAwcHgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgaWQ9ImIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2Utd2lkdGg9IjQuOCI+Cg08ZyBpZD0iU1ZHUmVwb19iZ0NhcnJpZXIiIHN0cm9rZS13aWR0aD0iMCIvPgoNPGcgaWQ9IlNWR1JlcG9fdHJhY2VyQ2FycmllciIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cg08ZyBpZD0iU1ZHUmVwb19pY29uQ2FycmllciI+Cg08ZGVmcz4KDTxzdHlsZT4uY3tmaWxsOm5vbmU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO308L3N0eWxlPgoNPC9kZWZzPgoNPHBhdGggY2xhc3M9ImMiIGQ9Im0zMi44LDI5LjNjLTguOS0uOC0xNi4yLTcuOC0xNy41LTE2LjYtLjMtMS44LS4zLTMuNywwLTUuNC4yLTEuNC0xLjQtMi4zLTIuNS0xLjZDNi4zLDkuNywyLjEsMTYuOSwyLjUsMjVjLjUsMTAuNyw5LDE5LjUsMTkuNywyMC40LDEwLjYuOSwxOS44LTYsMjIuNS0xNS42LjQtMS40LTEtMi42LTIuMy0yLTIuOSwxLjMtNi4xLDEuOC05LjYsMS41WiIvPgoNPC9nPgoNPC9zdmc+" role="presentation" style="pointer-events: none;" width="23" height="23">
+              </div>
+          </div>
+          <input class="js-toggle-screenreader-only" type="checkbox" aria-label="روشن | تاریک">
+      </div>
+    </div> 
+</div>
+{{ end }}

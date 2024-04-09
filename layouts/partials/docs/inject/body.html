@@ -1,0 +1,45 @@
+<button onclick="topFunction()" id="scroll" title="بالا" class="fas fa-solid fa-arrow-up"></button>
+<script src="prism.js"></script>
+
+<script>
+  document.getElementById("currentsv").innerHTML = window.location.href;
+</script>
+<script async="async">
+    var html = document.documentElement;
+    var switcher = document.getElementsByClassName('js-toggle')[0];
+    if(typeof(Storage) !== 'undefined') {
+        if (localStorage.getItem('themeMode') == 'dark' || document.documentElement.getAttribute('data-theme') == 'dark') {
+            switcher.classList.add('js-toggle--checked');
+        }
+        switcher.classList.add('js-toggle--focus');
+    }
+    //Click on dark mode icon. Add dark mode classes and wrappers. Store user preference through sessions
+    switcher.addEventListener("click", function() {
+            this.classList.toggle('js-toggle--checked');
+            this.classList.add('js-toggle--focus');
+            //If dark mode is selected
+            if (this.classList.contains('js-toggle--checked')) {
+                html.setAttribute("data-theme","dark");
+                //Save user preference in storage
+                localStorage.setItem('themeMode', 'dark');
+            } else {
+                html.setAttribute("data-theme","light");
+                localStorage.setItem('themeMode', 'light');
+            }
+        })
+</script>
+<script>
+    let mybutton = document.getElementById("scroll");
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
