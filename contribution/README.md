@@ -121,7 +121,7 @@ og_image: "/posts/<file-name>/banner.png"
 
 **نمایش tooltip**:
 
-با استفاده از این کد کوتاه می توانید یک {{< tooltip text="هاور متن" note="text hover" >}} برای کلمه مورد نظر خود ایجاد کنید.
+با استفاده از این کد کوتاه می توانید یک هاور متن برای کلمه مورد نظر خود ایجاد کنید.
 
 ```
 {{< tooltip text="مدل زبانی بزرگ" note="Large Language Model" >}} 
@@ -129,9 +129,7 @@ og_image: "/posts/<file-name>/banner.png"
 
 **تولید tab**
 
-{{< tabs "tabs" >}}
 
-{{< tab "تب اول" >}}
 برای نمایش محتوا به صورت تب کافی است که از فرمت زیر استفاده کنید:
 
 ```
@@ -146,18 +144,10 @@ og_image: "/posts/<file-name>/banner.png"
 
 {{< /tabs >}}
 ```
-{{< /tab >}}
-{{< tab "تب دوم" >}}
-محتوا
-{{< /tab >}}
-
-{{< /tabs >}}
 
 **راهنما**
 
-{{< hint info >}}
 برای نمایش متن به صورت راهنما می‌توانید از فرمت زیر استفاده کنید:
-{{< /hint >}} 
 
 ```
 {{< hint info | warning | danger >}}
@@ -181,11 +171,7 @@ og_image: "/posts/<file-name>/banner.png"
 
 {{< scrollbox >}}
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
-
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
-
-Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
+Lorem ipsum dolor sit amet...   
 
 {{< /scrollbox >}}
 
@@ -202,10 +188,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
 
 **چند ستونی**
 
-{{< columns >}}
 برای محتوا در چند ستون کنار هم می‌توانید آن را به صورت فوق فرمت‌دهی کنید.
-
-<--->
 
 ```
 {{< columns >}}
@@ -218,12 +201,10 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
 
 {{< /columns >}}
 ```
-{{< /columns >}}
-
 
 ## درخواست بررسی پست
 
-زمانی که ترجمه و ویرایش یک پست به پایان رسید٬ کامیت‌های نهایی را به PR خود اضافه کنید و کلمه `[DRAFT]` در عنوان PR را به `[REVIEW]` تغییر دهید. در این صورت ما بازبینی نهایی متن پست را انجام می‌دهیم و آن را در برنچ master مرج می‌کنیم.
+زمانی که تولید محتوای پست به پایان رسید٬ کامیت‌های نهایی را به PR خود اضافه کنید و کلمه `[DRAFT]` در عنوان PR را به `[REVIEW]` تغییر دهید. در این صورت ما بازبینی نهایی متن پست را انجام می‌دهیم و آن را در برنچ master مرج می‌کنیم.
 
 
 
