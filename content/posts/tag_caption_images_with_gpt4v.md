@@ -448,7 +448,7 @@ df.shape
 
 پردازش همهٔ ۳۱۲ خط مجموعه داده مدتی زمان می‌برد. برای آزمایش این ایده، فقط آن را بر روی اولین ۵۰ خط اجرا خواهیم کرد که تقریباً ۲۰ دقیقه زمان می‌برد. اگر تمایل دارید این مرحله را انجام ندهید و مجموعه داده از پیش پردازش شده را بارگذاری کنید جدول پایین را مشاهده کنید.
 
-<div style="overflow: auto; max-height: 400px; max-width: 100%;">
+{{< scrollbox >}}
     <table style="width: 100%; border-collapse: collapse;" >
   <thead>
     <tr style="text-align: right;">
@@ -527,7 +527,7 @@ df.shape
     </tr>
   </tbody>
     </table>
-</div>
+{{< /scrollbox >}}
 
 ```python
 # Saving locally for later
@@ -560,7 +560,7 @@ df_search['embedding'] = df_search.apply(lambda x: embed_tags_caption(x), axis=1
 df_search.head()
 ```
 
-<div style="overflow: auto; max-height: 400px; max-width: 100%;">
+{{< scrollbox >}}
     <table style="width: 100%; border-collapse: collapse;" >
   <thead>
     <tr style="text-align: right;">
@@ -645,7 +645,7 @@ df_search.head()
     </tr>
   </tbody>
     </table>
-</div>
+{{< /scrollbox >}}
 
 
 ```python

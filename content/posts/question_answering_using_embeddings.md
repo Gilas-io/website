@@ -150,7 +150,7 @@ As an AI language model, I don't have real-time data. However, I can provide you
 
 برای کمک به مدل بخشی از صفحه ویکی مربوط به نتایج المپیک سال ۲۰۲۲ رو در اختیار مدل قرار می‌دهیم.
 
-<div style="overflow: auto; max-height: 400px; max-width: 100%;">
+{{< scrollbox >}}
 ```
 wikipedia_article_on_curling = """Curling at the 2022 Winter Olympics
 
@@ -452,7 +452,7 @@ Male: Chris Plys
 """
 
 ``
-</div>
+{{< /scrollbox >}}
 
 و حالا سوال را مجددا از مدل می‌پرسیم. ولی اینبار اطلاعات بالا را هم در اختیار مدل قرار می‌دهیم.
 
@@ -545,7 +545,7 @@ for string, relatedness in zip(strings, relatednesses):
     display(string)
 ```
 
-<div style="overflow: auto; max-height: 400px; max-width: 100%;">
+{{< scrollbox >}}
 ```
 relatedness=0.879
 
@@ -567,7 +567,7 @@ relatedness=0.867
 
 "Curling at the 2022 Winter Olympics\n\n==Results summary==\n\n===Men's tournament===\n\n====Playoffs====\n\n=====Gold medal game=====\n\n''Saturday, 19 February, 14:50''\n{{#lst:Curling at the 2022 Winter Olympics – Men's tournament|GM}}\n{{Player percentages\n| team1 = {{flagIOC|GBR|2022 Winter}}\n| [[Hammy McMillan Jr.]] | 95%\n| [[Bobby Lammie]] | 80%\n| [[Grant Hardie]] | 94%\n| [[Bruce Mouat]] | 89%\n| teampct1 = 90%\n| team2 = {{flagIOC|SWE|2022 Winter}}\n| [[Christoffer Sundgren]] | 99%\n| [[Rasmus Wranå]] | 95%\n| [[Oskar Eriksson]] | 93%\n| [[Niklas Edin]] | 87%\n| teampct2 = 94%\n}}"
 ``
-</div>
+{{< /scrollbox >}}
 
 ### **۳. پرسیدن**
 
@@ -661,7 +661,7 @@ ask('Which athletes won the gold medal in curling at the 2022 Winter Olympics?')
 ask('Which athletes won the gold medal in curling at the 2022 Winter Olympics?', print_message=True)
   ```
 
-<div style="overflow: auto; max-height: 400px; max-width: 100%;">
+{{< scrollbox >}}
 ```
 {{main|Curling at the 2022 Winter Olympics}}
 {|{{MedalistTable|type=Event|columns=1|width=225|labelwidth=200}}
@@ -942,7 +942,7 @@ Saturday, 19 February, 20:05
 
 Question: Which athletes won the gold medal in curling at the 2022 Winter Olympics?
 ``
-</div>
+{{< /scrollbox >}}
 
 با دانستن اینکه این اشتباه به دلیل استدلال ناکامل در مرحله پرسش بوده است، تا بر خطا در مرحله جستجو، بیایید بر بهبود مرحله پرسش تمرکز کنیم. راحت‌ترین راه برای بهبود نتایج، استفاده از مدلی قابل‌تر، مانند GPT-4 است. بیایید امتحانش کنیم.
 

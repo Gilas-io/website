@@ -239,8 +239,8 @@ for model in [
 ```
 
 خروجی:
-<div style="overflow: auto; max-height: 400px; max-width: 100%;">
 
+{{< scrollbox >}}
 ```
 gpt-3.5-turbo-0301
 127 prompt tokens counted by num_tokens_from_messages().
@@ -268,4 +268,4 @@ Warning: gpt-4 may update over time. Returning num tokens assuming gpt-4-0613.
 129 prompt tokens counted by num_tokens_from_messages().
 129 prompt tokens counted by the Gilas API.
 ```
-</div>
+{{< /scrollbox >}}
