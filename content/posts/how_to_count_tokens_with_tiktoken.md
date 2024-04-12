@@ -28,7 +28,7 @@ og_image: "/posts/how_to_count_tokens_with_tiktoken/banner.png"
 
 | Encoding name | OpenAI models |
 |---|---|
-| `cl100k_base` | `gpt-4`, `gpt-3.5-turbo`, `text-embedding-ada-002`, `text-embedding-3-small`, `text-embedding-3-large` |
+| `cl100k_base` | `gpt-4-turbo`, `gpt-3.5-turbo`, `text-embedding-ada-002`, `text-embedding-3-small`, `text-embedding-3-large` |
 | `p50k_base` |  Codex models, `text-davinci-002`, `text-davinci-003` |
 | `r50k_base` | GPT-3 models like `davinci` |
 
@@ -126,10 +126,10 @@ encoding.decode([83, 1609, 5963, 374, 2294, 0])
 
 ## شمارش توکن‌ها برای فراخوانی Chat Completions API
 
- در زیر یک تابع نمونه برای شمارش توکن‌ها برای پیام‌های ارسالی به gpt-3.5-turbo یا gpt-4 وجود دارد. توجه داشته باشید که روش دقیق شمارش توکن‌ها از پیام‌ها ممکن است از مدل به مدل تغییر کند. شمارش‌های حاصل از تابع زیر را یک تخمین در نظر بگیرید، نه یک ضمانت. به خصوص، درخواست‌هایی که از Function call استفاده می‌کنند، توکن‌های اضافی را بر روی تخمین‌های محاسبه شده در زیر مصرف خواهند کرد.
+ در زیر یک تابع نمونه برای شمارش توکن‌ها برای پیام‌های ارسالی به gpt-3.5-turbo یا gpt-4-turbo وجود دارد. توجه داشته باشید که روش دقیق شمارش توکن‌ها از پیام‌ها ممکن است از مدل به مدل تغییر کند. شمارش‌های حاصل از تابع زیر را یک تخمین در نظر بگیرید، نه یک ضمانت. به خصوص، درخواست‌هایی که از Function call استفاده می‌کنند، توکن‌های اضافی را بر روی تخمین‌های محاسبه شده در زیر مصرف خواهند کرد.
 
  ```python
-def num_tokens_from_messages(messages, model="gpt-3.5-turbo-0613"):
+def num_tokens_from_messages(messages, model="gpt-3.5-turbo"):
     """Return the number of tokens used by a list of messages."""
     try:
         encoding = tiktoken.encoding_for_model(model)

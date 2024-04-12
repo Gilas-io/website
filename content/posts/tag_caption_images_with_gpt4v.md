@@ -3,8 +3,7 @@ title: "تگ زدن تصاویر و تولید کپشن برای آنها"
 description: "این Notebook توضیح می‌دهد که چگونه می‌توان از GPT-4-Vision برای برچسب زدن و توضیح تصاویر بهره برد. ما می‌توانیم از توانایی‌های GPT-4V استفاده کنیم تا تصاویر ورودی را همراه با اطلاعات تکمیلی در مورد آنها پردازش کند و برچسب‌ها یا توضیحات مربوط به را خروجی دهد. سپس می‌توان توضیحات تصویر را با استفاده از یک مدل زبانی (در این نوت‌بوک، ما از GPT-4-turbo استفاده خواهیم کرد) برای تولید توضیحات بیشتر اصلاح کرد."
 tags:
 - openai
-- gpt-4
-- gpt-4-vision
+- gpt-4-turbo
 - image-processing
 - gilas.io
 - blog
@@ -87,7 +86,7 @@ system_prompt = '''
 
 def analyze_image(img_url, title):
     response = client.chat.completions.create(
-    model="gpt-4-vision-preview",
+    model="gpt-4-turbo",
     messages=[
         {
             "role": "system",
@@ -245,7 +244,6 @@ describe_system_prompt = '''
 
 def describe_image(img_url, title):
     response = client.chat.completions.create(
-    model="gpt-4-vision-preview",
     temperature=0.2,
     messages=[
         {
@@ -332,7 +330,7 @@ formatted_examples = [i for ex in formatted_examples for i in ex]
 ```
 
 ```python
-def caption_image(description, model="gpt-4-turbo-preview"):
+def caption_image(description, model="gpt-4-turbo"):
     messages = formatted_examples
     messages.insert(0, 
         {

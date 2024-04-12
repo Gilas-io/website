@@ -3,8 +3,7 @@ title: " تولید روایت صوتی برای ویدیو"
 description: "این Notebook نشان می‌دهد چگونه می‌توان از توانایی‌های بصری GPT-4 برای درک محتوای یک ویدیو و تولید متن متناسب با آن و نهایتا تبدیل متن تولید شده به صدا استفاده کرد. GPT-4 به طور مستقیم ویدیوها را به عنوان ورودی قبول نمی‌کند، اما می‌توانیم از قابلیت vision و طول کانتکست 128K برای توصیف فریم‌های این راهنما شامل دو مرحله است:"
 tags:
 - openai
-- gpt-4
-- gpt-4-vision
+- gpt-4-turno
 - text-to-speech
 - video-processing
 - gilas.io
@@ -98,7 +97,7 @@ PROMPT_MESSAGES = [
     },
 ]
 params = {
-    "model": "gpt-4-vision-preview",
+    "model": "gpt-4-turbo",
     "messages": PROMPT_MESSAGES,
     "max_tokens": 200,
 }
@@ -135,7 +134,7 @@ PROMPT_MESSAGES = [
     },
 ]
 params = {
-    "model": "gpt-4-vision-preview",
+    "model": "gpt-4-turbo",
     "messages": PROMPT_MESSAGES,
     "max_tokens": 500,
 }
