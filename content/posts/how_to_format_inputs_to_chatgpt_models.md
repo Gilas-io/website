@@ -74,10 +74,10 @@ client = OpenAI(
 - `tool_choice`: تماس‌های تابع مدل را کنترل می‌کند (none/auto/function).
 - `user`: شناسه یکتا برای نظارت بر کاربر نهایی و تشخیص سوء استفاده.
 
-از ژانویه 2024، می‌توانید یک لیست از توابع را ارسال کنید که به GPT بگوید آیا می‌تواند یک JSON را برای ورودی به یک تابع تولید کند. برای اطلاعات بیشتر می‌توانید [این پست](/how_to_call_functions_with_chat_models) را مطالعه کنید.
+از ژانویه 2024، می‌توانید یک لیست از توابع را ارسال کنید که به GPT بگوید آیا می‌تواند یک JSON را برای ورودی به یک تابع تولید کند. [این پست](/how_to_call_functions_with_chat_models) مثال‌های جالبی را در مورد نحوه فراخوانی توابع با استفاده از LLM ارایه می‌دهد.
 
 
-معمولاً، یک گفتگو با پیام `system` آغاز می‌شود که به `assistant` می‌گوید چگونه رفتار کند، و پس از آن پیام‌های `user` و `assistant` به نوبت دنبال می‌شوند، اما شما مجبور به دنبال کردن این فرمت نیستید.
+معمولاً، یک گفتگو با پیام `system` آغاز می‌شود که به `assistant` می‌گوید چگونه رفتار کند، و پس از آن پیام‌های `user` و `assistant` به نوبت دنبال می‌شوند، هر چند مجبور به دنبال کردن این فرمت نیستید. ما معمولا با استفاده از پیام `system` مدل را برنامه ریزی یا به عبارتی مهندسی پرامپت می‌کنیم.
 
 
 بیایید نگاهی به یک نمونه فراخوانی API چت بیندازیم تا ببینیم فرمت چت در عمل چگونه کار می‌کند.
@@ -89,9 +89,7 @@ response = client.chat.completions.create(
     model=MODEL,
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": "Knock knock."},
-        {"role": "assistant", "content": "Who's there?"},
-        {"role": "user", "content": "Orange."},
+        {"role": "user", "content": "نوروز چه روزی است؟"},
     ],
     temperature=0,
 )
@@ -107,7 +105,7 @@ print(json.dumps(json.loads(response.model_dump_json()), indent=4))
             "index": 0,
             "logprobs": null,
             "message": {
-                "content": "Orange who?",
+                "content": "نوروز اولین روز فصل بهار است.",
                 "role": "assistant",
                 "function_call": null,
                 "tool_calls": null
