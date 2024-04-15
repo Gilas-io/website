@@ -9,7 +9,7 @@ tags:
 - completions
 - gilas.io
 - blog
-weight: 2001
+weight: 2006
 og_image: "/posts/how_to_format_inputs_to_chatgpt_models/banner.jpg" 
 ---
 
