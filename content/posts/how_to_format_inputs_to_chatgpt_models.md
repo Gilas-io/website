@@ -1,20 +1,19 @@
 
 ---
-title: "نحوه فرمت اطلاعات برای فراخوانی مدل"
-description: "این Notebook نشان می‌دهد چگونه می‌توان از توانایی‌های بصری GPT-4 برای درک محتوای یک ویدیو و تولید متن متناسب با آن و نهایتا تبدیل متن تولید شده به صدا استفاده کرد. GPT-4 به طور مستقیم ویدیوها را به عنوان ورودی قبول نمی‌کند، اما می‌توانیم از قابلیت vision و طول کانتکست 128K برای توصیف فریم‌های این راهنما شامل دو مرحله است:"
+title: "فرمت‌ ورودی و خروجی داده ها"
+description: "مدل‌های چت، یگ سری از پیام‌ها را به عنوان ورودی می‌پذیرند و یک پیام نوشته شده توسط AI را به عنوان خروجی برمی‌گردانند.
+این راهنما با چند نمونه فراخوانی API فرمت چت را نشان می‌دهد."
 tags:
 - openai
-- gpt-4
-- gpt-4-vision
-- text-to-speech
-- video-processing
+- chat
+- completions
 - gilas.io
 - blog
 weight: 2001
-og_image: "/posts/how_to_format_inputs_to_chatgpt_models/banner.png" 
+og_image: "/posts/how_to_format_inputs_to_chatgpt_models/banner.jpg" 
 ---
 
-{{< postcover src="/posts/how_to_format_inputs_to_chatgpt_models/banner.png" >}}
+{{< postcover src="/posts/how_to_format_inputs_to_chatgpt_models/banner.jpg" >}}
 
 
 مدل‌های چت، یگ سری از پیام‌ها را به عنوان ورودی می‌پذیرند و یک پیام نوشته شده توسط AI را به عنوان خروجی برمی‌گردانند.
@@ -96,6 +95,9 @@ response = client.chat.completions.create(
 
 print(json.dumps(json.loads(response.model_dump_json()), indent=4))
 ```
+
+<div style="direction: ltr" >
+
 ```
 {
     "id": "chatcmpl-8dee9DuEFcg2QILtT2a6EBXZnpirM",
@@ -124,6 +126,8 @@ print(json.dumps(json.loads(response.model_dump_json()), indent=4))
 }
 ```
 
+</div>
+
 همانطور که می‌بینید، شیء پاسخ دارای چند فیلد است:
 
 - `id`: شناسه درخواست
@@ -141,38 +145,82 @@ print(json.dumps(json.loads(response.model_dump_json()), indent=4))
 - `system_fingerprint`:  اثر انگشت، پیکربندی پشتیبانی که مدل با آن اجرا می‌شود را نشان می‌دهد.
 - `usage`: تعداد توکن‌های استفاده شده برای تولید پاسخ‌ها، شامل پرامپت، تکمیل و کل
 
-/////////
 
-ب فقط پاسخ با:
+برای اینکه فقط پاسخ مدل را ببینید:
 
-حتی وظایف غیرمبتنی بر گفتگو نیز می‌توانند در فرمت چت قرار بگیرند، با قرار دادن دستورالعمل در اولین پیام کاربر.
-برای مثال، برای درخواست از مدل که برنامه‌نویسی ناهمزمان را به سبک دزد دریایی Blackbeard توضیح دهد، می‌توانیم گفتگو را به شکل زیر ساختاربندی کنیم:
+```python
+response.choices[0].message.content
 
-نکاتی برای دستورالعمل دادن به gpt-3.5-turbo-0301
-بهترین شیوه‌ها برای دستورالعمل دادن به مدل‌ها ممکن است از نسخه مدل به نسخه مدل تغییر کند. توصیه‌هایی که دنبال می‌شود برای gpt-3.5-turbo-0301 اعمال می‌شود و ممکن است برای مدل‌های آینده صدق نکند.
-پیام‌های سیستمی
-پیام سیستمی می‌تواند برای آماده‌سازی دستیار با شخصیت‌ها یا رفتارهای مختلف استفاده شود.
-توجه داشته باشید که gpt-3.5-turbo-0301 به طور کلی به اندازه gpt-4-0314 یا gpt-3.5-turbo-0613 به پیام سیستمی توجه نمی‌کند. بنابراین، برای gpt-3.5-turbo-0301، ما پیشنهاد می‌کنیم دستورالعمل‌های مهم را در پیام کاربر قرار دهید. برخی از توسعه‌دهندگان موفقیت یافته‌اند که با قرار دادن پیام سیستمی در انتهای گفتگو، توجه مدل را از دور شدن به عنوان گفتگوها طولانی‌تر می‌شوند، حفظ کنند.
+نوروز اولین روز فصل بهار است.
+```
 
-استفاده از نمونه‌های چندگانه برای دستورالعمل دادن
-در برخی موارد، نشان دادن مدل به آنچه می‌خواهید، به جای گفتن به مدل آنچه می‌خواهید، آسان‌تر است.
-یک راه برای نشان دادن مدل آنچه می‌خواهید، با پیام‌های نمونه جعلی است.
+## Few-shot prompting
+
+در برخی موارد، راحت‌تر است که آنچه را که می‌خواهید به مدل نشان دهید. 
+یک راه برای انجام این کار، نشان دادن چند نمونه از روش حل یک مسیله به مدل است.
+
 برای مثال:
 
-برای کمک به روشن کردن اینکه پیام‌های نمونه بخشی از یک گفتگوی واقعی نیستند و نباید توسط مدل به آنها ارجاع داده شود، می‌توانید سعی کنید فیلد name پیام‌های system را به example_user و example_assistant تنظیم کنید.
-تبدیل نمونه چندگانه بالا، می‌توانیم بنویسیم:
+```python
+# An example of a faked few-shot conversation to prime the model into translating business jargon to simpler speech
+response = client.chat.completions.create(
+    model=MODEL,
+    messages=[
+        {"role": "system", "content": "You are a helpful, pattern-following assistant."},
+        {"role": "user", "content": "Help me translate the following corporate jargon into plain English."},
+        {"role": "assistant", "content": "Sure, I'd be happy to!"},
+        {"role": "user", "content": "New synergies will help drive top-line growth."},
+        {"role": "assistant", "content": "Things working well together will increase revenue."},
+        {"role": "user", "content": "Let's circle back when we have more bandwidth to touch base on opportunities for increased leverage."},
+        {"role": "assistant", "content": "Let's talk later when we're less busy about how to do better."},
+        {"role": "user", "content": "This late pivot means we don't have time to boil the ocean for the client deliverable."},
+    ],
+    temperature=0,
+)
 
-هر تلاشی برای مهندسی گفتگوها در ابتدا موفق نخواهد شد.
-اگر اولین تلاش‌های شما شکست خورد، نترسید از آزمایش با روش‌های مختلف برای آماده‌سازی یا شرایط‌سازی مدل.
-به عنوان مثال، یک توسعه‌دهنده افزایش دقت را کشف کرد زمانی که یک پیام کاربری را که می‌گفت "تاکنون کار عالی بوده، این‌ها کاملاً عالی بوده‌اند" قرار داد تا مدل را به ارائه پاسخ‌های با کیفیت بالاتر شرطی کند.
-برای ایده‌های بیشتر درباره افزایش قابلیت اطمینان مدل‌ها، بررسی راهنمای ما در مورد تکنیک‌های افزایش قابلیت اطمینان را در نظر بگیرید. برای مدل‌های غیر چت نوشته شده است، اما بسیاری از اصول آن هنوز اعمال می‌شوند.
-شمارش توکن‌ها
-وقتی درخواست خود را ارسال می‌کنید، API پیام‌ها را به یک دنباله از توکن‌ها تبدیل می‌کند.
-تعداد توکن‌های استفاده شده تأثیر می‌گذارد بر:
-هزینه درخواست
-زمان لازم برای تولید پاسخ
-وقتی پاسخ به دلیل رسیدن به حداکثر محدودیت توکن (4,096 برای gpt-3.5-turbo یا 8,192 برای gpt-4) قطع می‌شود
-شما می‌توانید از تابع زیر برای شمارش تعداد توکن‌هایی که یک لیست از پیام‌ها استفاده خواهد کرد، استفاده کنید.
-توجه داشته باشید که روش دقیق شمارش توکن‌ها از پیام‌ها ممکن است از مدلی به مدل دیگر تغییر کند. شمارش‌هایی که از تابع زیر به دست می‌آید را یک تضمین همیشگی در نظر نگیرید.
-به ویژه، درخواست‌هایی که از ورودی توابع اختیاری استفاده می‌کنند، توکن‌های اضافی را بر فراز تخمین‌های محاسبه شده زیر مصرف می‌کنند.
-برای خواندن بیشتر درباره شمارش توکن‌ها به How to count tokens with tiktoken مراجعه کنید.
+print(response.choices[0].message.content)
+```
+
+```
+Fractions represent parts of a whole. They have a numerator (top number) and a denominator (bottom number).
+```
+
+برای کمک به روشن کردن اینکه پیام‌های نمونه بخشی از یک گفتگوی واقعی نیستند و نباید توسط مدل به آنها ارجاع داده شود، می‌توانید سعی کنید فیلد `name` پیام‌های `system` را به `example_user` و `example_assistant` تنظیم کنید.
+
+مثال:
+
+```python
+# The business jargon translation example, but with example names for the example messages
+response = client.chat.completions.create(
+    model=MODEL,
+    messages=[
+        {"role": "system", "content": "You are a helpful, pattern-following assistant that translates corporate jargon into plain English."},
+        {"role": "system", "name":"example_user", "content": "New synergies will help drive top-line growth."},
+        {"role": "system", "name": "example_assistant", "content": "Things working well together will increase revenue."},
+        {"role": "system", "name":"example_user", "content": "Let's circle back when we have more bandwidth to touch base on opportunities for increased leverage."},
+        {"role": "system", "name": "example_assistant", "content": "Let's talk later when we're less busy about how to do better."},
+        {"role": "user", "content": "This late pivot means we don't have time to boil the ocean for the client deliverable."},
+    ],
+    temperature=0,
+)
+
+print(response.choices[0].message.content)
+```
+
+```
+This sudden change in direction means we don't have enough time to complete the entire project for the client.
+```
+
+معمولا برای رسیدن به نتیجه مطلوب باید روش‌های مختلف را همراه با پیام‌های گوناگون امتحان کنید. در صورت علاقه می‌توانید این [دوره کامل مهندسی پرامپت](https://www.youtube.com/playlist?list=PLKI4_lXzsRRf_DNrqdzFBdV-VqknLGbZ7) را تماشا کنید.
+
+
+## شمارش توکن‌ها
+
+وقتی درخواست خود را ارسال می‌کنید، API پیام‌ها را به دنباله‌ای از توکن‌ها تبدیل می‌کند.
+
+تعداد توکن‌های استفاده شده بر:
+- هزینه درخواست
+- زمان لازم برای تولید پاسخ
+تاثیر می‌گذارد.
+
+برای مطالعه بیشتر درباره شمارش توکن‌ها پست [شمردن تعداد توکن‌ها با tiktoken](/how_to_count_tokens_with_tiktoken) مطالعه کنید.
