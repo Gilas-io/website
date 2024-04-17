@@ -6,7 +6,7 @@ tags:
 - tiktoken
 - gilas.io
 - blog
-weight: 2004
+weight: 2005
 og_image: "/posts/how_to_count_tokens_with_tiktoken/banner.png" 
 ---
 

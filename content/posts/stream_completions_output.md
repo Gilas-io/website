@@ -6,7 +6,7 @@ tags:
 - streaming
 - gilas.io
 - blog
-weight: 2005
+weight: 2006
 og_image: "/posts/stream_completions_output/banner.png" 
 ---
 
