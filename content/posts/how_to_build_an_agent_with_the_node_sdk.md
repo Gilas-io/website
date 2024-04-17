@@ -4,8 +4,9 @@ description: "مدل‌های چت، یگ سری از پیام‌ها را به 
 این راهنما با چند نمونه فراخوانی API فرمت چت را نشان می‌دهد."
 tags:
 - openai
-- chat
-- completions
+- chatbot
+- function-call
+- node.js
 - gilas.io
 - blog
 weight: 2004
