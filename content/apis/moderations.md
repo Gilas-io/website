@@ -4,10 +4,7 @@ weight: 1003
 next: /posts/p1
 ---
 
-{{< hint info >}}
-**توجه**  
-در نظر داشته باشید که Gilas APIs از لحاظ فنی و نحوه کارکرد و قابلیت‌ها کاملا شبیه OpenAI APIs هستند. به همین منظور پیشنهاد میکنیم که برای آگاهی از نحوه‌ی کارکرد API ها به مستندات [OpenAI API Reference](https://platform.openai.com/docs/api-reference/moderations) و [OpenAI Documentation](https://platform.openai.com/docs/guides/moderation) ارجاع کنید.
-{{< /hint >}}
+
 
 مدل‌های Moderation وظیفه بررسی متن ورودی و مشخص کردن اینکه آیا متن دارای محتوای نامناسب است را دارند. اگر متن ورودی نامناسب تضخیص داده شود, فراخوانی‌های بعدی به مدل‌های دیگر برای این متن رد خواهند شد.
 
@@ -77,8 +74,9 @@ curl https://api.gilas.io/v1/moderations \
   ]
 }
 ```
-برای آگاهی کامل از قابلیت‌های Moderation API لطفا  [مستندات وب‌سایت OpenAI](https://platform.openai.com/docs/guides/moderation) را مطالعه کنید.
 
-
-همچنین  [OpenAI API Reference](https://platform.openai.com/docs/api-reference/moderations) شامل مستندات مربوط به Moderation API می‌باشد که مطالعه آنها برای استفاده از این اندپوینت بسیار اهمیت دارد.
+{{< hint info >}}
+**توجه**  
+در نظر داشته باشید که Gilas APIs از لحاظ فنی و نحوه کارکرد و قابلیت‌ها کاملا شبیه OpenAI APIs هستند. به همین منظور پیشنهاد میکنیم که برای آگاهی از نحوه‌ی کارکرد API ها به مستندات [OpenAI API Reference](https://platform.openai.com/docs/api-reference/moderations) و [OpenAI Documentation](https://platform.openai.com/docs/guides/moderation) ارجاع کنید.
+{{< /hint >}}
 

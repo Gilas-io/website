@@ -3,10 +3,6 @@ title: 'v1/chat/completions/'
 weight: 1000
 ---
 
-{{< hint info >}}
-**توجه**  
-در نظر داشته باشید که Gilas APIs از لحاظ فنی و نحوه کارکرد و قابلیت‌ها کاملا شبیه OpenAI APIs هستند. به همین منظور پیشنهاد میکنیم که برای آگاهی از نحوه‌ی کارکرد API ها به مستندات [OpenAI API Reference](https://platform.openai.com/docs/api-reference/chat) و [OpenAI Documentation](https://platform.openai.com/docs/guides/text-generation) ارجاع کنید.
-{{< /hint >}}
 
 مدل‌های تولید متن قابل دسترس از طریق Gilas API توانایی درک زبان طبیعی و کدنویسی را دارند. این مدل‌ها به ورودی‌های خود با خروجی‌های متنی که بسیار شبیه به جواب‌های انسانی هستند پاسخ می‌دهند. ورودی‌های این مدل‌ها همچنین به عنوان "prompt" شناخته می‌شوند. طراحی یک پرامپت اساساً چگونگی "برنامه‌ریزی" یک مدل زبانی بزرگ است.
 
@@ -395,7 +391,7 @@ curl https://api.openai.com/v1/chat/completions \
 برای مشاهده یک مثال کامل از نحوه‌ی فراخوانی توابع می‌توانید پست [فراخوانی توابع توسط مدل](/posts/how_to_call_functions_with_chat_models) را مطالعه کنید.
 
 
-برای آگاهی کامل از قابلیت‌های Chat Completions API لطفا  [مستندات وب‌سایت OpenAI](https://platform.openai.com/docs/guides/text-generation) را مطالعه کنید.
-
-همچنین  [OpenAI API Reference](https://platform.openai.com/docs/api-reference/chat) شامل مستندات مربوط به Chat Completions API می‌باشد که مطالعه آنها برای استفاده از این اندپوینت بسیار اهمیت دارد.
-
+{{< hint info >}}
+**توجه**  
+در نظر داشته باشید که Gilas APIs از لحاظ فنی و نحوه کارکرد و قابلیت‌ها کاملا شبیه OpenAI APIs هستند. به همین منظور پیشنهاد میکنیم که برای آگاهی از نحوه‌ی کارکرد API ها به مستندات [OpenAI API Reference](https://platform.openai.com/docs/api-reference/chat) و [OpenAI Documentation](https://platform.openai.com/docs/guides/text-generation) ارجاع کنید.
+{{< /hint >}}

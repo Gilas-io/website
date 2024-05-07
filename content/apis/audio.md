@@ -3,10 +3,7 @@ title: 'v1/audio/'
 weight: 1002
 ---
 
-{{< hint info >}}
-**توجه**  
-در نظر داشته باشید که Gilas APIs از لحاظ فنی و نحوه کارکرد و قابلیت‌ها کاملا شبیه OpenAI APIs هستند. به همین منظور پیشنهاد میکنیم که برای آگاهی از نحوه‌ی کارکرد API ها به مستندات [OpenAI API Reference](https://platform.openai.com/docs/api-reference/audio) و [OpenAI Documentation](https://platform.openai.com/docs/guides/text-to-speech) ارجاع کنید.
-{{< /hint >}}
+
 
 مدل‌های صوتی برای تبدیل صوت به متن و همچنین متن به صوت قابل استفاده هستند. این مدل‌های از دقت بسیار بالاتری نسبت به سرویس‌های مشابه برخوردار بوده و همچنین صوت تولید شده شباهت زیادی به صدای انسان دارد.
 مدل Whisper قادر به تبدیل صوت به متن است و می‌توانند زبان‌های مختلف را به یکدیگر ترجمه کند.
@@ -162,8 +159,7 @@ Response:
 }
 ```
 
-برای آگاهی کامل از قابلیت‌های Audio API لطفا  [مستندات وب‌سایت OpenAI](https://platform.openai.com/docs/guides/text-to-speech) را مطالعه کنید.
-
-
-همچنین  [OpenAI API Reference](https://platform.openai.com/docs/api-reference/audio) شامل مستندات مربوط به Audio API می‌باشد که مطالعه آنها برای استفاده از این اندپوینت بسیار اهمیت دارد.
-
+{{< hint info >}}
+**توجه**  
+در نظر داشته باشید که Gilas APIs از لحاظ فنی و نحوه کارکرد و قابلیت‌ها کاملا شبیه OpenAI APIs هستند. به همین منظور پیشنهاد میکنیم که برای آگاهی از نحوه‌ی کارکرد API ها به مستندات [OpenAI API Reference](https://platform.openai.com/docs/api-reference/audio) و [OpenAI Documentation](https://platform.openai.com/docs/guides/text-to-speech) ارجاع کنید.
+{{< /hint >}}

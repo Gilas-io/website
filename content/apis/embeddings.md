@@ -3,11 +3,6 @@ title: 'v1/embeddings/'
 weight: 1001
 ---
 
-{{< hint info >}}
-**توجه**  
-در نظر داشته باشید که Gilas APIs از لحاظ فنی و نحوه کارکرد و قابلیت‌ها کاملا شبیه OpenAI APIs هستند. به همین منظور پیشنهاد میکنیم که برای آگاهی از نحوه‌ی کارکرد API ها به مستندات [OpenAI API Reference](https://platform.openai.com/docs/api-reference/embeddings) و [OpenAI Documentation](https://platform.openai.com/docs/guides/embeddings) ارجاع کنید.
-{{< /hint >}}
-
 مدل‌های Embeddings توانایی اندازه‌گیری مرتبط بودن متون به یکدیگر را دارند. از Embeddings برای منظورهای مختلفی استفاده می‌شود, از جمله:
 
 - جستجوی میان متون برای یافتن متن‌هایی که از جنبه‌های متفاوتی نزدیک به هم هستند.
@@ -60,8 +55,8 @@ curl https://api.gilas.io/v1/embeddings \
 }
 ```
 
-برای آگاهی کامل از قابلیت‌های ‌Embeddings API لطفا  [مستندات وب‌سایت OpenAI](https://platform.openai.com/docs/guides/embeddings) را مطالعه کنید.
-
-
-همچنین  [OpenAI API Reference](https://platform.openai.com/docs/api-reference/embeddings) شامل مستندات مربوط به Embeddings API می‌باشد که مطالعه آنها برای استفاده از این اندپوینت بسیار اهمیت دارد.
+{{< hint info >}}
+**توجه**  
+در نظر داشته باشید که Gilas APIs از لحاظ فنی و نحوه کارکرد و قابلیت‌ها کاملا شبیه OpenAI APIs هستند. به همین منظور پیشنهاد میکنیم که برای آگاهی از نحوه‌ی کارکرد API ها به مستندات [OpenAI API Reference](https://platform.openai.com/docs/api-reference/embeddings) و [OpenAI Documentation](https://platform.openai.com/docs/guides/embeddings) ارجاع کنید.
+{{< /hint >}}
 
