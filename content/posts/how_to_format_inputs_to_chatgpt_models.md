@@ -3,11 +3,7 @@ title: "فرمت‌ ورودی و خروجی داده ها"
 description: "مدل‌های چت، یگ سری از پیام‌ها را به عنوان ورودی می‌پذیرند و یک پیام نوشته شده توسط AI را به عنوان خروجی برمی‌گردانند.
 این راهنما با چند نمونه فراخوانی API فرمت چت را نشان می‌دهد."
 tags:
-- openai
-- chat
-- completions
-- gilas.io
-- blog
+- chat-completions
 weight: 2007
 og_image: "/posts/how_to_format_inputs_to_chatgpt_models/banner.jpg" 
 ---

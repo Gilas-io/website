@@ -2,10 +2,8 @@
 title: "شمردن تعداد توکن‌ها با tiktoken"
 description: "پکیج tiktoken یک توکن ساز سریع و open source است که توسط OpenAI توسعه پیدا کرده است. با دادن یک رشته متن (مثلاً، 'tiktoken is great!') و یک encoding (مثلاً، 'cl100k_base')، یک توکن ساز می تواند رشته متن را به یک لیست از توکن ها تقسیم کند."
 tags:
-- openai
 - tiktoken
-- gilas.io
-- blog
+- token
 weight: 2005
 og_image: "/posts/how_to_count_tokens_with_tiktoken/banner.png" 
 ---

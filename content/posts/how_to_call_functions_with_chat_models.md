@@ -2,10 +2,7 @@
 title: "فراخوانی توابع توسط مدل"
 description: این notebook نحوه استفاده از API Chat Completions را در ترکیب با توابع خارجی برای گسترش قابلیت های مدل های GPT را نشان می دهد."
 tags:
-- openai
 - function-call
-- gilas.io
-- blog
 weight: 2003
 og_image: "/posts/how_to_call_functions_with_chat_models/banner.png" 
 ---

@@ -2,12 +2,9 @@
 title: "ساخت یک Chatbot Agent با Node.js"
 description: "قابلیت فراخوانی تابع در مدل‌های GPT به برنامه شما اجازه می دهد توابع داخلی برنامه را بر اساس ورودی های کاربر فراخوانی کند. این به این معنی است که برنامه می تواند عملیات مختلفی از جمله، جستجو در وب، ارسال ایمیل، یا رزرو بلیط از طرف کاربران را انجام دهد، که این امر برنامه شما را قدرتمندتر از یک چت بات معمولی می کند."
 tags:
-- openai
 - chatbot
 - function-call
 - node.js
-- gilas.io
-- blog
 weight: 2004
 og_image: "/posts/how_to_build_an_agent_with_the_node_sdk/banner.jpg" 
 ---
