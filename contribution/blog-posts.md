@@ -4,3 +4,4 @@
 - (How to build an agent with the node SDK)[https://cookbook.openai.com/examples/how_to_build_an_agent_with_the_node_sdk] - ترجمه شده
 - (How to evel abstractive summarization)[https://cookbook.openai.com/examples/evaluation/how_to_eval_abstractive_summarization] - منتظر مترجم
 - (How to work with LLMs)[https://cookbook.openai.com/articles/how_to_work_with_large_language_models] - منتظر مترجم
+- (Using GPT4 Vision with Function Calling)[https://cookbook.openai.com/examples/multimodal/using_gpt4_vision_with_function_calling] - منتظر مترجم
