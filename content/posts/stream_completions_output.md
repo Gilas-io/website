@@ -4,7 +4,7 @@ description: "به طور پیش فرض، هنگامی که شما از Gilas AP
 tags:
 - streaming
 - chat-completions
-weight: 2006
+weight: 2007
 og_image: "/posts/stream_completions_output/banner.png" 
 ---
 

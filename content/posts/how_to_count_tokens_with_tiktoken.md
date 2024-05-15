@@ -4,7 +4,7 @@ description: "پکیج tiktoken یک توکن ساز سریع و open source ا�
 tags:
 - tiktoken
 - token
-weight: 2005
+weight: 2006
 og_image: "/posts/how_to_count_tokens_with_tiktoken/banner.png" 
 ---
 
