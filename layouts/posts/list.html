@@ -1,10 +1,87 @@
 {{ define "main" }}
+<style>
+  .post-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+  .post-item {
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  .post-item:hover {
+    transform: translateY(-10px);
+  }
+  .post-cover {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    border-radius: 8px 8px 0 0;
+  }
+  .post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    color: #555;
+  }
+  .keyword {
+    background-color: #f1f1f1;
+    padding: 5px 10px 0px 10px;
+    border-radius: 4px;
+  }
+  h2 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #333;
+  }
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: 768px) {
+    .post-item {
+      width: calc(50% - 20px);
+    }
+  }
+  @media (max-width: 480px) {
+    .post-item {
+      width: 100%;
+    }
+  }
+</style>
+
+<div class="post-grid">
   {{ range sort .Paginator.Pages }}
-  <article class="markdown book-post">
+  <article class="markdown book-post post-item">
+    {{ if .Params.og_image }}
+    <img src="{{ .Params.og_image }}" alt="Post Cover Image" class="post-cover" />
+    {{ end }}
     <h2>
       <a href="{{ .RelPermalink }}">{{ partial "docs/title.html" . }}</a>
     </h2>
-    {{ partial "docs/post-meta" . }}
+    <div class="post-meta">
+      {{ if .Params.tags }}
+        {{ range .Params.tags }}
+          <span class="keyword"><a href="/tags/{{ . | urlize }}">{{ . }}</a></span>
+        {{ end }}
+      {{ end }}
+    </div>
     <p>
       {{- .Summary -}}
       {{ if .Truncated }}
@@ -13,8 +90,9 @@
     </p>
   </article>
   {{ end }}
+</div>
 
-  {{ template "_internal/pagination.html" . }}
+{{ template "_internal/pagination.html" . }}
 {{ end }}
 
 {{ define "toc" }}
