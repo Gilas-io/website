@@ -67,7 +67,7 @@
 </style>
 
 <div class="post-grid">
-  {{ range sort .Paginator.Pages }}
+  {{ range sort (.Paginator 12).Pages }}
   <article class="markdown book-post post-item">
     {{ if .Params.og_image }}
     <img src="{{ .Params.og_image }}" alt="Post Cover Image" class="post-cover" />

@@ -3,7 +3,10 @@ title: "تولید خروجی‌های یکسان با پارامتر seed"
 description: "توسعه‌دهندگان اکنون می‌توانند پارامتر seed را در درخواست‌های Chat Completion استفاده کنند تا خروجی‌های نسبتاً ثابتی دریافت کنند. لطفاً توجه داشته باشید که این ویژگی در مرحله بتا است و در حال حاضر فقط برای مدلهای gpt-4-1106-preview و gpt-3.5-turbo-1106 و مدل‌های بعد از آنها پشتیبانی می‌شود.
 "
 weight: 2009
+og_image: "/posts/reproducible_outputs_with_the_seed_parameter/banner.png" 
 ---
+
+{{< postcover src="/posts/reproducible_outputs_with_the_seed_parameter/banner.png" >}}
 
 توسعه‌دهندگان اکنون می‌توانند پارامتر `seed` را در درخواست‌های `Chat Completion` استفاده کنند تا خروجی‌های نسبتاً ثابتی دریافت کنند. لطفاً توجه داشته باشید که این ویژگی در مرحله بتا است و در حال حاضر فقط برای مدلهای `gpt-4-1106-preview` و `gpt-3.5-turbo-1106` و مدل‌های بعد از آنها پشتیبانی می‌شود.
 
