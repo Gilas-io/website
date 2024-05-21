@@ -32,6 +32,7 @@ startLevel = 1
   weight = 10
 
 [params]
+
 googleAnalytics = "G-CPWSTYXXK6"
 # (Optional, default light) Sets color theme: light, dark or auto.
 # Theme 'auto' switches between dark and light modes based on browser/os preferences

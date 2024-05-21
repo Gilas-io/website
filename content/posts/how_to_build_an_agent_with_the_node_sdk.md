@@ -6,7 +6,7 @@ tags:
 - function-call
 - node.js
 weight: 2004
-og_image: "/posts/how_to_build_an_agent_with_the_node_sdk/banner.jpg" 
+og_image: "/posts/how_to_build_an_agent_with_the_node_sdk/banner.png" 
 ---
 
 {{< postcover src="/posts/how_to_build_an_agent_with_the_node_sdk/banner.png" >}}
