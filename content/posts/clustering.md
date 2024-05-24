@@ -40,7 +40,7 @@ df.head(2)
 ```
 
 نمایش:
-
+{{< ltr >}}
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -77,7 +77,7 @@ df.head(2)
     </tr>
   </tbody>
 </table>
-
+{{< /ltr >}}
 
 
 ```python
@@ -169,6 +169,7 @@ df.groupby("Cluster").Score.mean().sort_values()
 
 ```
 
+{{< ltr >}}
 ```
 Cluster
 0    4.105691
@@ -176,8 +177,8 @@ Cluster
 2    4.215613
 3    4.306590
 Name: Score, dtype: float64
-
 ```
+{{< /ltr >}}
 
 ```python
 from sklearn.manifold import TSNE
@@ -203,13 +204,13 @@ plt.title("Clusters identified visualized in language 2d using t-SNE")
 
 ```
 
+{{< ltr >}}
 ```
 Text(0.5, 1.0, 'Clusters identified visualized in language 2d using t-SNE')
 ```
+{{< /ltr >}}
 
 {{< img image="/posts/clustering/cluster.png" alt="cluster" >}}
-
-
 
 بصری‌سازی خوشه‌ها در یک پروجکشن دو بعدی. در این اجرا، خوشه سبز (#1) به نظر می‌رسد که تفاوت زیادی با دیگران دارد. بیایید چند نمونه از هر خوشه را ببینیم.
 
@@ -257,6 +258,7 @@ for i in range(n_clusters):
 
 ```
 
+{{< ltr >}}
 ```
 Cluster 0 Theme: The theme of these customer reviews is food products purchased on Amazon.
 5, Loved these gluten free healthy bars, saved $$ ordering on Amazon:   These Kind Bars are so good and healthy & gluten free.  My daughter ca
@@ -287,5 +289,6 @@ Cluster 3 Theme: The theme of these customer reviews is food and drink products.
 3, Just ok:   I bought this brand because it was all they had at Ranch 99 near us. I
 ----------------------------------------------------------------------------------------------------
 ```
+{{< /ltr >}}
 
 مهم است که توجه داشته باشید که خوشه‌ها لزوماً با آنچه شما قصد استفاده از آنها را دارید مطابقت نخواهند داشت. تعداد بیشتری از خوشه‌ها بر الگوهای خاص‌تر تمرکز خواهند کرد، در حالی که تعداد کمتری از خوشه‌ها معمولاً بر بزرگترین تفاوت‌ها در داده‌ها تمرکز خواهند کرد.

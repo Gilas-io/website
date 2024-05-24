@@ -164,6 +164,7 @@ print(report)
 
 ```
 
+{{< ltr >}}
 ```
               precision    recall  f1-score   support
 
@@ -176,9 +177,8 @@ print(report)
     accuracy                           0.78       200
    macro avg       0.91      0.45      0.54       200
 weighted avg       0.81      0.78      0.73       200
-
-
 ```
+{{< /ltr >}}
 
 می‌توانیم ببینیم که مدل به خوبی توانسته است بین دسته‌ها تمایز قائل شود. نظرات ۵ ستاره بهترین عملکرد را نشان می‌دهند و این امر تعجب‌آور نیست، زیرا این نظرات در دیتاست بیشترین تعداد را دارند.
 ```python
@@ -187,9 +187,11 @@ from utils.embeddings_utils import plot_multiclass_precision_recall
 plot_multiclass_precision_recall(probas, y_test, [1, 2, 3, 4, 5], clf)
 ```
 
+{{< ltr >}}
 ```
 RandomForestClassifier() - Average precision score over all classes: 0.90
 ```
+{{< /ltr >}}
 
 {{< img image="/posts/classification_using_embeddings/random_forest-classifier.png" alt="random forest classifier" >}}
 

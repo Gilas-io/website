@@ -238,9 +238,11 @@ if (finish_reason === "tool_calls" && message.tool_calls) {
 
 خروجی برای یوزر ما:
 
+{{< ltr >}}
 ```
 {ip: "193.212.60.170", network: "193.212.60.0/23", version: "IPv4", city: "Oslo", region: "Oslo County", region_code: "03", country: "NO", country_name: "Norway", country_code: "NO", country_code_iso3: "NOR", country_capital: "Oslo", country_tld: ".no", continent_code: "EU", in_eu: false, postal: "0026", latitude: 59.955, longitude: 10.859, timezone: "Europe/Oslo", utc_offset: "+0200", country_calling_code: "+47", currency: "NOK", currency_name: "Krone", languages: "no,nb,nn,se,fi", country_area: 324220, country_population: 5314336, asn: "AS2119", org: "Telenor Norge AS"}
 ```
+{{< /ltr >}}
 
 حال این داده ها را به یک پیغام جدید در آرایه `messages` اضافه می کنیم، جایی که نام تابعی را که فراخوانی کردیم را نیز مشخص می کنیم
 
@@ -309,8 +311,7 @@ console.log(response);
 
 و این جوابی هست که از برنامه می‌گیرم.
 
-<div style="direction: ltr">
-
+{{< ltr >}}
 ```
 Based on your current location in Oslo, Norway and the weather (15°C and snowy),
 here are some activity suggestions:
@@ -324,21 +325,18 @@ here are some activity suggestions:
  
 Always remember to bundle up and stay warm. Enjoy your day!
 ```
-
-</div>
+{{< /ltr >}}
 
 اگر نگاهی به لیست پیام‌های رد و بدل شده بین agent  و مدل بیاندازیم -  `response.choices[0].message` - می بینیم که مدل به برنامه دستور اجرای هر دو تابع را داده است. ابتدا، دستور اجرای تابع `getLocation` و سپس   تابع `getCurrentWeather` را با "longitude": "10.859", "latitude": "59.955" به عنوان آرگومان ها.
 
 این داده ای است که از اولین فراخوانی تابعی که انجام دادیم، برگردانده شده است.
 
-<div style="direction: ltr">
-
+{{< ltr >}}
 ```
 {"role":"assistant","content":null,"tool_calls":[{"id":"call_Cn1KH8mtHQ2AMbyNwNJTweEP","type":"function","function":{"name":"getLocation","arguments":"{}"}}]}
 {"role":"assistant","content":null,"tool_calls":[{"id":"call_uc1oozJfGTvYEfIzzcsfXfOl","type":"function","function":{"name":"getCurrentWeather","arguments":"{\n\"latitude\": \"10.859\",\n\"longitude\": \"59.955\"\n}"}}]}
 ```
-
-</div>
+{{< /ltr >}}
 
 
 تبریک! شما توانستید یک عامل AI را که قادر به انجام کارهایی که کاربر از و می‌خواهد٬ است را ساختید.

@@ -182,11 +182,11 @@ assistant_message
 ```
 
 خروجی:
-
+{{< ltr >}}
 ```
 ChatCompletionMessage(content='Sure, could you please tell me the location for which you would like to know the weather?', role='assistant', function_call=None, tool_calls=None)
 ```
-
+{{< /ltr >}}
 
 
 هنگامی که کاربر اطلاعات تکمیلی را ارائه دهد، مدل آرگومان های مناسب تابع را برای ما تولید می کند.
@@ -203,9 +203,11 @@ assistant_message
 
 خروجی مدل همراه با اسم تابعی که باید فراخوانی شود و آرگومان‌های ورودی آن:
 
+{{< ltr >}}
 ```
 ChatCompletionMessage(content=None, role='assistant', function_call=None, tool_calls=[ChatCompletionMessageToolCall(id='call_2PArU89L2uf4uIzRqnph4SrN', function=Function(arguments='{\n  "location": "Glasgow, Scotland",\n  "format": "celsius"\n}', name='get_current_weather'), type='function')])
 ```
+{{< /ltr >}}
 
 با تغییر متنی که به مدل می دهیم، می توانیم آن را به تابع دیگری که برای آن تعریف کرده‌ایم، متمایل کنیم.
 
@@ -222,10 +224,11 @@ assistant_message
 ```
 
 خروجی:
-
+{{< ltr >}}
 ```
 ChatCompletionMessage(content='Sure, I can help you with that. How many days would you like to get the weather forecast for?', role='assistant', function_call=None, tool_calls=None)
 ```
+{{< /ltr >}}
 
 دوباره، مدل از ما برای توضیحات بیشتر سوال می کند زیرا هنوز اطلاعات کافی را برای تولید آرکومان‌های لازم برای تابع ندارد. در این مورد مدل از مکانی که کاربر بیان کرده مطلع است، اما نمی‌داند پیش‌بینی آب و هوا را برای چند روز باید انجام دهد.
 
@@ -237,9 +240,11 @@ chat_response = chat_completion_request(
 chat_response.choices[0]
 ```
 
+{{< ltr >}}
 ```
 Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content=None, role='assistant', function_call=None, tool_calls=[ChatCompletionMessageToolCall(id='call_ujD1NwPxzeOSCbgw2NOabOin', function=Function(arguments='{\n  "location": "Glasgow, Scotland",\n  "format": "celsius",\n  "num_days": 5\n}', name='get_n_day_weather_forecast'), type='function')]), internal_metrics=[{'cached_prompt_tokens': 128, 'total_accepted_tokens': 0, 'total_batched_tokens': 273, 'total_predicted_tokens': 0, 'total_rejected_tokens': 0, 'total_tokens_in_completion': 274, 'cached_embeddings_bytes': 0, 'cached_embeddings_n': 0, 'uncached_embeddings_bytes': 0, 'uncached_embeddings_n': 0, 'fetched_embeddings_bytes': 0, 'fetched_embeddings_n': 0, 'n_evictions': 0, 'sampling_steps': 40, 'sampling_steps_with_predictions': 0, 'batcher_ttft': 0.035738229751586914, 'batcher_initial_queue_time': 0.0007979869842529297}])
 ```
+{{< /ltr >}}
 
 ### **اجبار مدل به استفاده از توابعی خاص یا هیچ تابعی**
 
@@ -271,10 +276,11 @@ chat_response = chat_completion_request(
 chat_response.choices[0].message
 ```
 
+{{< ltr >}}
 ```
 ChatCompletionMessage(content=None, role='assistant', function_call=None, tool_calls=[ChatCompletionMessageToolCall(id='call_z8ijGSoMLS7xcaU7MjLmpRL8', function=Function(arguments='{\n  "location": "Toronto, Canada",\n  "format": "celsius"\n}', name='get_current_weather'), type='function')])
 ```
-
+{{< /ltr >}}
 
 ما همچنین می توانیم مدل را مجبور کنیم که از هیچ تابعی استفاده نکند. 
 
@@ -288,9 +294,11 @@ chat_response = chat_completion_request(
 chat_response.choices[0].message
 ```
 
+{{< ltr >}}
 ```
 ChatCompletionMessage(content='{\n  "location": "Toronto, Canada",\n  "format": "celsius"\n}', role='assistant', function_call=None, tool_calls=None)
 ```
+{{< /ltr >}}
 
 ### **فراخوانی موازی توابع**
 
@@ -308,6 +316,7 @@ assistant_message = chat_response.choices[0].message.tool_calls
 assistant_message
 ```
 
+{{< ltr >}}
 ```
 [
     ChatCompletionMessageToolCall(id='call_8BlkS2yvbkkpL3V1Yxc6zR6u', function=Function(arguments='{"location": "San Francisco, CA", "format": "celsius", "num_days": 4}', name='get_n_day_weather_forecast'), type='function'),
@@ -315,6 +324,7 @@ assistant_message
     ChatCompletionMessageToolCall(id='call_vSZMy3f24wb3vtNXucpFfAbG', function=Function(arguments='{"location": "Glasgow", "format": "celsius", "num_days": 4}', name='get_n_day_weather_forecast'), type='function')
 ]
 ```
+{{< /ltr >}}
 
 ## فراخوانی توابع با آرگومان های تولید شده توسط مدل
 
@@ -440,6 +450,7 @@ if assistant_message.tool_calls:
 pretty_print_conversation(messages)
 ```
 
+{{< ltr >}}
 ```
 system: Answer user questions by generating SQL queries against the Chinook Music Database.
 
@@ -449,6 +460,7 @@ assistant: Function(arguments='{\n  "query": "SELECT Artist.Name, COUNT(Track.Tr
 
 function (ask_database): [('Iron Maiden', 213), ('U2', 135), ('Led Zeppelin', 114), ('Metallica', 112), ('Lost', 92)]
 ```
+{{< /ltr >}}
 
 مثالی دیگر:
 
@@ -464,6 +476,7 @@ if assistant_message.tool_calls:
 pretty_print_conversation(messages)
 ```
 
+{{< ltr >}}
 ```
 system: Answer user questions by generating SQL queries against the Chinook Music Database.
 
@@ -479,3 +492,4 @@ assistant: Function(arguments='{\n  "query": "SELECT Album.Title, COUNT(Track.Tr
 
 function (ask_database): [('Greatest Hits', 57)]
 ```
+{{< /ltr >}}

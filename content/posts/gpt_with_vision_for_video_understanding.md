@@ -62,10 +62,11 @@ print(len(base64Frames), "frames read.")
 ```
 خروجی:
 
+{{< ltr >}}
 ```text
 618 frames read.
 ```
-
+{{< /ltr >}}
 
 
 فریم‌ها را نمایش می‌دهیم تا مطمئن شویم که آن‌ها را به درستی خوانده‌ایم:
@@ -105,11 +106,13 @@ print(result.choices[0].message.content)
 
 خروجی:
 
-```text
+{{< ltr >}}
+```
 "🐺 Survival of the Fittest: An Epic Tale in the Snow ❄️ - Witness the intense drama of nature as a pack of wolves face off against mighty bison in a harsh winter landscape. This raw footage captures the essence of the wild where every creature fights for survival. With each frame, experience the tension, the strategy, and the sheer force exerted in this life-or-death struggle. See nature's true colors in this gripping encounter on the snowy plains. 🦬"
 
 Remember to respect wildlife and nature. This video may contain scenes that some viewers might find intense or distressing, but they depict natural animal behaviors important for ecological studies and understanding the reality of life in the wilderness.
 ```
+{{< /ltr >}}
 
 {{< hint warning >}} 
 توجه: ورودی‌های داده شده و خروجی‌های تولید شده توسط مدل در این مثال به زبان انگلیسی هستند. برای تولید خروجی به زبان فارسی٬ کافی‌ست از مدل بخواهید که خروجی را به زبان فارسی تولید کند.
@@ -142,13 +145,15 @@ print(result.choices[0].message.content)
 
 خروجی:
 
-```text
+{{< ltr >}}
+```
 In the vast, white expanse of the northern wilderness, a drama as old as time unfolds. Here, amidst the silence of the snow, the wolf pack circles, their breaths visible as they cautiously approach their formidable quarry, the bison. These wolves are practiced hunters, moving with strategic precision, yet the bison, a titan of strength, stands resolute, a force to be reckoned with.
 As tension crackles in the frozen air, the wolves close in, their eyes locked on their target. The bison, wary of every movement, prepares to defend its life. It's a perilous dance between predator and prey, where each step could be the difference between life and death.
 In an instant, the quiet of the icy landscape is shattered. The bison charges, a desperate bid for survival as the pack swarms. The wolves are relentless, each one aware that their success depends on the strength of the collective. The bison, though powerful, is outnumbered, its massive form stirring up clouds of snow as it struggles.
 It's an epic battle, a testament to the harsh realities of nature. In these moments, there is no room for error, for either side. The wolves, agile and tenacious, work in unison, their bites a chorus aiming to bring down the great beast. The bison, its every heaving breath a testament to its will to survive, fights fiercely, but the odds are not in its favor. 
 With the setting sun casting long shadows over the snow, the outcome is inevitable. Nature, in all its raw beauty and brutality, does not show favor. The wolves, now victors, gather around their prize, their survival in this harsh climate secured for a moment longer. It's a poignant reminder of the circle of life that rules this pristine wilderness, a reminder that every creature plays its part in the enduring saga of the natural world.
 ```
+{{< /ltr >}}
 
 حال می‌توانیم فیلمنامه را با استفاده از TTS API به صدا تبدیل کنیم. برای این کار کافی است که یک درخواست به اندپوینت `https://api.gilas.io/v1/audio/speech` بفرستیم:
 
