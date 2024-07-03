@@ -26,10 +26,10 @@ startLevel = 1
 
 [menu]
 # [[menu.before]]
-[[menu.after]]
-  name = "مشارکت در بلاگ"
-  url = "https://github.com/Gilas-io/website/tree/master/contribution"
-  weight = 10
+# [[menu.after]]
+#  name = "مشارکت در بلاگ"
+#  url = "https://github.com/Gilas-io/website/tree/master/contribution"
+#  weight = 10
 
 [params]
 
