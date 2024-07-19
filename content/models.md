@@ -63,7 +63,7 @@ text-embedding-ada-002 | با قابلیت‌ترین مدل نسل دوم ada |
 
  مدل | توضیحات  | 
 ---|---|
-whisper-1 | فایل ورودی می‌تواند یکی از فرمت‌های .mp3, .mp4, .mpeg, .mpga, .m4a, .wav و .webm باشد. |
+whisper-1 | فایل ورودی می‌تواند یکی از فرمت‌های .mp3 یا .wav باشد. |
 tts-1 | فایل خروجی می‌تواند یکی از فرمت‌های .opus, .acc, .flac, .wav و .pcm باشد. |
 
 ## OpenAI Moderations
