@@ -302,14 +302,14 @@ ChatCompletionMessage(content='{\n  "location": "Toronto, Canada",\n  "format": 
 
 ### **فراخوانی موازی توابع**
 
-مدل های جدیدتر مانند gpt-4-turbo یا gpt-3.5-turbo می توانند در یک نوبت چندین تابع را فراخوانی کنند.
+مدل های جدیدتر مانند gpt-4-turbo یا gpt-4o-mini می توانند در یک نوبت چندین تابع را فراخوانی کنند.
 
 ```python
 messages = []
 messages.append({"role": "system", "content": "Don't make assumptions about what values to plug into functions. Ask for clarification if a user request is ambiguous."})
 messages.append({"role": "user", "content": "what is the weather going to be like in San Francisco and Glasgow over the next 4 days"})
 chat_response = chat_completion_request(
-    messages, tools=tools, model='gpt-3.5-turbo'
+    messages, tools=tools, model='gpt-4o-mini'
 )
 
 assistant_message = chat_response.choices[0].message.tool_calls

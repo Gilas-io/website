@@ -33,7 +33,7 @@ curl https://api.gilas.io/v1/chat/completions  \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer $GILAS_API_KEY" \
 -d '{
-    "model": "gpt-3.5-turbo",
+    "model": "gpt-4o-mini",
     "messages": [
       {
         "role": "system",
@@ -74,7 +74,7 @@ import (
 func main() {
 	url := "https://api.gilas.io/v1/chat/completions"
 	payload := map[string]interface{}{
-		"model": "gpt-3.5-turbo",
+		"model": "gpt-4o-mini",
 		"messages": []map[string]string{
 			{
 				"role":    "system",
@@ -121,7 +121,7 @@ const axios = require('axios');
 async function makeRequest() {
     const url = 'https://api.gilas.io/v1/chat/completions';
     const payload = {
-        model: 'gpt-3.5-turbo',
+        model: 'gpt-4o-mini',
         "messages": [
             {
                 "role": "system",
@@ -173,7 +173,7 @@ def make_request():
         'Authorization': f'Bearer {os.getenv("GILAS_API_KEY")}'
     }
     payload = {
-        'model': 'gpt-3.5-turbo',
+        'model': 'gpt-4o-mini',
         "messages": [
             {
                 "role": "system",
@@ -235,7 +235,7 @@ if __name__ == "__main__":
   ],
   "created": 1677664795,
   "id": "chatcmpl-7QyqpwdfhqwajicIEznoc6Q47XAyW",
-  "model": "gpt-3.5-turbo-0613",
+  "model": "gpt-4o-mini",
   "object": "chat.completion",
   "usage": {
     "completion_tokens": 17,
@@ -267,7 +267,7 @@ if __name__ == "__main__":
 
 یک روش رایج برای استفاده از `Chat Completions` این است که مدل را به گونه‌ای پرامپت کنید که همیشه یک شیء `JSON` را برگرداند. این روش مخصوصا برای زمانی که قصد دارید از خروجی مدل در داخل برنامه‌های خود استفاده کنید بسیار کاربردی است. در نظر داشته باشید که ممکن از در بعضی حالات خروجی `JSON` تولید شده معتبر نباشد. برای همین همیشه خروجی را قبل از استفاده اعتبارسنجی کنید.
 
-برای جلوگیری از این خطاها و بهبود عملکرد مدل، هنگام فراخوانی `gpt-4-turbo` یا `gpt-3.5-turbo`، می‌توانید پارامتر `response_format` را به `{"type": "json_object"}` تنظیم کنید تا حالت `JSON` فعال شود. وقتی حالت `JSON` فعال است، مدل فقط به تولید رشته‌هایی محدود می‌شود که به شیء `JSON` معتبر تجزیه شوند.
+برای جلوگیری از این خطاها و بهبود عملکرد مدل، هنگام فراخوانی `gpt-4-turbo`، می‌توانید پارامتر `response_format` را به `{"type": "json_object"}` تنظیم کنید تا حالت `JSON` فعال شود. وقتی حالت `JSON` فعال است، مدل فقط به تولید رشته‌هایی محدود می‌شود که به شیء `JSON` معتبر تجزیه شوند.
 
 نکات مهم:
 
@@ -283,7 +283,7 @@ curl https://api.openai.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
   -d '{
-    "model": "gpt-3.5-turbo-0125",
+    "model": "gpt-4o-mini",
     "response_format": { "type": "json_object" },
     "messages": [
       {
@@ -324,10 +324,10 @@ curl https://api.openai.com/v1/chat/completions \
 خروجی تولید شده به صورت استریم شامل قطعه‌هایی (chunk) از جواب هستند:
 
 ```bash
-{"id":"chatcmpl-123","object":"chat.completion.chunk","created":1694268190,"model":"gpt-3.5-turbo-0125", "system_fingerprint": "fp_44709d6fcb", "choices":[{"index":0,"delta":{"role":"assistant","content":""},"logprobs":null,"finish_reason":null}]}
-{"id":"chatcmpl-123","object":"chat.completion.chunk","created":1694268190,"model":"gpt-3.5-turbo-0125", "system_fingerprint": "fp_44709d6fcb", "choices":[{"index":0,"delta":{"content":"Hello"},"logprobs":null,"finish_reason":null}]}
+{"id":"chatcmpl-123","object":"chat.completion.chunk","created":1694268190,"model":"gpt-4o-mini", "system_fingerprint": "fp_44709d6fcb", "choices":[{"index":0,"delta":{"role":"assistant","content":""},"logprobs":null,"finish_reason":null}]}
+{"id":"chatcmpl-123","object":"chat.completion.chunk","created":1694268190,"model":"gpt-4o-mini", "system_fingerprint": "fp_44709d6fcb", "choices":[{"index":0,"delta":{"content":"Hello"},"logprobs":null,"finish_reason":null}]}
 ....
-{"id":"chatcmpl-123","object":"chat.completion.chunk","created":1694268190,"model":"gpt-3.5-turbo-0125", "system_fingerprint": "fp_44709d6fcb", "choices":[{"index":0,"delta":{},"logprobs":null,"finish_reason":"stop"}]}
+{"id":"chatcmpl-123","object":"chat.completion.chunk","created":1694268190,"model":"gpt-4o-mini", "system_fingerprint": "fp_44709d6fcb", "choices":[{"index":0,"delta":{},"logprobs":null,"finish_reason":"stop"}]}
 ```
 
 ## مدیریت توکن‌ها
@@ -356,7 +356,7 @@ curl https://api.openai.com/v1/chat/completions \
 
 در یک فراخوانی `API`، می‌توانید توابعی را توصیف کنید و به مدل اجازه دهید تا به طور هوشمندانه تصمیم بگیرد که یک شیء `JSON` شامل آرگومان‌هایی برای فراخوانی یک یا چند تابع را خروجی دهد. `Chat Completions API`  تابعی را فراخوانی نمی‌کند؛ به جای آن، مدل `JSON`ای تولید می‌کند که می‌توانید از آن برای فراخوانی تابع در کد خود استفاده کنید.
 
-مدل‌های جدید (`gpt-3.5-turbo` و `gpt-4-turbo`) آموزش دیده‌اند که هم تشخیص دهند چه زمانی باید تابعی فراخوانی شود (بسته به ورودی) و هم پاسخی به فرم `JSON` بدهند که برای فراخوانی توابع ضروری است.
+مدل‌های جدید (`gpt-4o-mini` و `gpt-4-turbo`) آموزش دیده‌اند که هم تشخیص دهند چه زمانی باید تابعی فراخوانی شود (بسته به ورودی) و هم پاسخی به فرم `JSON` بدهند که برای فراخوانی توابع ضروری است.
 این توانایی، خطرات بالقوه‌ای نیز دارد. ما توصیه می‌کنیم که قبل از انجام هر گونه عملیاتی از طرف کاربران (فرستادن ایمیل، ارسال پست در اینترنت، خرید و غیره)، ورودی های کاربر را اعتبارسنجی کنید.
 
 ### کاربردهای متداول

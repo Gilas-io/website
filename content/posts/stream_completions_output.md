@@ -70,7 +70,7 @@ start_time = time.time()
 
 # send a ChatCompletion request to count to 100
 response = client.chat.completions.create(
-    model='gpt-3.5-turbo',
+    model='gpt-4o-mini',
     messages=[
         {'role': 'user', 'content': 'Count to 100, with a comma between each number and no newlines. E.g., 1, 2, 3, ...'}
     ],
@@ -89,7 +89,7 @@ print(f"Full response received:\n{response}")
 ```
 Full response received 5.27 seconds after request
 Full response received:
-ChatCompletion(id='chatcmpl-8ZB8ywkV5DuuJO7xktqUcNYfG8j6I', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100.', role='assistant', function_call=None, tool_calls=None))], created=1703395008, model='gpt-3.5-turbo', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=299, prompt_tokens=36, total_tokens=335))
+ChatCompletion(id='chatcmpl-8ZB8ywkV5DuuJO7xktqUcNYfG8j6I', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100.', role='assistant', function_call=None, tool_calls=None))], created=1703395008, model='gpt-4o-mini', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=299, prompt_tokens=36, total_tokens=335))
 ```
 
 همچنین اطلاعات مربوط به تعداد تون مصرف شده برای تولید این متن از مسیر `response.choices[0].message.content` قابل دسترس است.
@@ -103,7 +103,7 @@ ChatCompletion(id='chatcmpl-8ZB8ywkV5DuuJO7xktqUcNYfG8j6I', choices=[Choice(fini
 
 # a ChatCompletion request
 response = client.chat.completions.create(
-    model='gpt-3.5-turbo',
+    model='gpt-4o-mini',
     messages=[
         {'role': 'user', 'content': "What's 1+1? Answer in one word."}
     ],
@@ -122,13 +122,13 @@ for chunk in response:
 {{< scrollbox >}}
 
 ```
-ChatCompletionChunk(id='chatcmpl-8ZB9m2Ubv8FJs3CIb84WvYwqZCHST', choices=[Choice(delta=ChoiceDelta(content='', function_call=None, role='assistant', tool_calls=None), finish_reason=None, index=0, logprobs=None)], created=1703395058, model='gpt-3.5-turbo-0613', object='chat.completion.chunk', system_fingerprint=None)
+ChatCompletionChunk(id='chatcmpl-8ZB9m2Ubv8FJs3CIb84WvYwqZCHST', choices=[Choice(delta=ChoiceDelta(content='', function_call=None, role='assistant', tool_calls=None), finish_reason=None, index=0, logprobs=None)], created=1703395058, model='gpt-4o-mini', object='chat.completion.chunk', system_fingerprint=None)
 
 ****************
-ChatCompletionChunk(id='chatcmpl-8ZB9m2Ubv8FJs3CIb84WvYwqZCHST', choices=[Choice(delta=ChoiceDelta(content='2', function_call=None, role=None, tool_calls=None), finish_reason=None, index=0, logprobs=None)], created=1703395058, model='gpt-3.5-turbo-0613', object='chat.completion.chunk', system_fingerprint=None)
+ChatCompletionChunk(id='chatcmpl-8ZB9m2Ubv8FJs3CIb84WvYwqZCHST', choices=[Choice(delta=ChoiceDelta(content='2', function_call=None, role=None, tool_calls=None), finish_reason=None, index=0, logprobs=None)], created=1703395058, model='gpt-4o-mini', object='chat.completion.chunk', system_fingerprint=None)
 2
 ****************
-ChatCompletionChunk(id='chatcmpl-8ZB9m2Ubv8FJs3CIb84WvYwqZCHST', choices=[Choice(delta=ChoiceDelta(content=None, function_call=None, role=None, tool_calls=None), finish_reason='stop', index=0, logprobs=None)], created=1703395058, model='gpt-3.5-turbo-0613', object='chat.completion.chunk', system_fingerprint=None)
+ChatCompletionChunk(id='chatcmpl-8ZB9m2Ubv8FJs3CIb84WvYwqZCHST', choices=[Choice(delta=ChoiceDelta(content=None, function_call=None, role=None, tool_calls=None), finish_reason='stop', index=0, logprobs=None)], created=1703395058, model='gpt-4o-mini', object='chat.completion.chunk', system_fingerprint=None)
 None
 ****************
 ```
@@ -146,7 +146,7 @@ None
 
 ## چقدر زمان با streaming تولید متن صرفه جویی می شود
 
-حالا بیایید از gpt-3.5-turbo بخواهیم دوباره تا 100 بشمارد و جواب ها رو به صورت استریم ارسال کند تا ببینیم این کار چقدر طول می کشد.
+حالا بیایید از gpt-4o-mini بخواهیم دوباره تا 100 بشمارد و جواب ها رو به صورت استریم ارسال کند تا ببینیم این کار چقدر طول می کشد.
 
 ```python
 # record the time before the request is sent
@@ -154,7 +154,7 @@ start_time = time.time()
 
 # send a ChatCompletion request to count to 100
 response = client.chat.completions.create(
-    model='gpt-3.5-turbo',
+    model='gpt-4o-mini',
     messages=[
         {'role': 'user', 'content': 'Count to 100, with a comma between each number and no newlines. E.g., 1, 2, 3, ...'}
     ],

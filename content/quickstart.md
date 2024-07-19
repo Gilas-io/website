@@ -43,7 +43,7 @@ curl https://api.gilas.io/v1/chat/completions  \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer $GILAS_API_KEY" \
 -d '{
-    "model": "gpt-3.5-turbo",
+    "model": "gpt-4o-mini",
     "messages": [
       {
         "role": "system",
@@ -76,7 +76,7 @@ import (
 func main() {
 	url := "https://api.gilas.io/v1/chat/completions"
 	payload := map[string]interface{}{
-		"model": "gpt-3.5-turbo",
+		"model": "gpt-4o-mini",
 		"messages": []map[string]string{
 			{"role": "system", "content": "You are an intelligent software developer. Please answer my questions."},
 			{"role": "user", "content": "How to write a simple HTTP call via curl on the command line?"},
@@ -108,7 +108,7 @@ const axios = require('axios');
 async function makeRequest() {
     const url = 'https://api.gilas.io/v1/chat/completions';
     const payload = {
-        model: 'gpt-3.5-turbo',
+        model: 'gpt-4o-mini',
         messages: [
             {
                 role: 'system',
@@ -152,7 +152,7 @@ def make_request():
         'Authorization': f'Bearer {os.getenv("GILAS_API_KEY")}'
     }
     payload = {
-        'model': 'gpt-3.5-turbo',
+        'model': 'gpt-4o-mini',
         'messages': [
             {'role': 'system', 'content': 'You are an intelligent software developer. Please answer my questions.'},
             {'role': 'user', 'content': 'How to write a simple HTTP call via curl on the command line?'}
@@ -208,7 +208,7 @@ const openai = new OpenAI({
 async function main() {
   const chatCompletion = await openai.chat.completions.create({
     messages: [{ role: 'user', content: 'Say this is a test' }],
-    model: 'gpt-3.5-turbo',
+    model: 'gpt-4o-mini',
   });
 
   console.log(chatCompletion.choices[0]);
@@ -246,7 +246,7 @@ chat_completion = client.chat.completions.create(
             "content": "Say this is a test",
         }
     ],
-    model="gpt-3.5-turbo",
+    model="gpt-4o-mini",
 )
 
 print(chat_completion.choices[0].message)

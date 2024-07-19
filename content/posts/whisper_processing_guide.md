@@ -118,7 +118,7 @@ def punctuation_assistant(ascii_transcript):
      commas, capialization, symbols like dollar sings or percentage signs, and formatting.
      Use only the context provided. If there is no context provided say, 'No context provided'\n"""
     response = client.chat.completions.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4o-mini",
         temperature=0,
         messages=[
             {

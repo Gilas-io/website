@@ -42,7 +42,7 @@ client = OpenAI(
 
 برای فراخوانی Chat Completions API پارامترهای زیر باید به مدل ارسال شوند:
 
-- `model`: نام مدلی که می‌خواهید استفاده کنید (مانند `gpt-3.5-turbo`, `gpt-4-turbo`)
+- `model`: نام مدلی که می‌خواهید استفاده کنید (مانند `gpt-4o-mini`, `gpt-4-turbo`)
 - `messages`: لیستی از شیء‌های پیام، جایی که هر شیء دو فیلد ضروری دارد:
     - `role`: نقش فرستنده پیام (`system`، `user`، `assistant` یا `tool`)
     - `content`: محتوای پیام (مثلاً نوشتن یک شعر زیبا)
@@ -78,7 +78,7 @@ client = OpenAI(
 
 ```python
 # Example OpenAI Python library request
-MODEL = "gpt-3.5-turbo"
+MODEL = "gpt-4o-mini"
 response = client.chat.completions.create(
     model=MODEL,
     messages=[
@@ -110,7 +110,7 @@ print(json.dumps(json.loads(response.model_dump_json()), indent=4))
         }
     ],
     "created": 1704461729,
-    "model": "gpt-3.5-turbo-0613",
+    "model": "gpt-4o-mini",
     "object": "chat.completion",
     "system_fingerprint": null,
     "usage": {

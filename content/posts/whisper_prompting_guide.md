@@ -231,7 +231,7 @@ transcribe(bbq_plans_filepath, prompt=""""Aimee and Shawn ate whisky, doughnuts,
 def fictitious_prompt_from_instruction(instruction: str) -> str:
     """با توجه به یک دستورالعمل، یک پراپمت ساختگی تولید کنید."""
     response = client.chat.completions.create(
-        model="gpt-3.5-turbo-0613",
+        model="gpt-4o-mini",
         temperature=0,
         messages=[
             {

@@ -84,9 +84,9 @@ def unit_tests_from_function(
     unit_test_package: str = "pytest",  # unit testing package; use the name as it appears in the import statement
     approx_min_cases_to_cover: int = 7,  # minimum number of test case categories to cover (approximate)
     print_text: bool = False,  # optionally prints text; helpful for understanding the function & debugging
-    explain_model: str = "gpt-3.5-turbo",  # model used to generate text plans in step 1
-    plan_model: str = "gpt-3.5-turbo",  # model used to generate text plans in steps 2 and 2b
-    execute_model: str = "gpt-3.5-turbo",  # model used to generate code in step 3
+    explain_model: str = "gpt-4o-mini",  # model used to generate text plans in step 1
+    plan_model: str = "gpt-4o-mini",  # model used to generate text plans in steps 2 and 2b
+    execute_model: str = "gpt-4o-mini",  # model used to generate code in step 3
     temperature: float = 0.4,  # temperature = 0 can sometimes get stuck in repetitive loops, so we use 0.4
     reruns_if_fail: int = 1,  # if the output code cannot be parsed, this will re-run the function up to N times
 ) -> str:

@@ -57,7 +57,7 @@ client = OpenAI(
    base_url="https://api.gilas.io/v1/" # Gilas APIs
 )
 
-GPT_MODEL = "gpt-3.5-turbo"
+GPT_MODEL = "gpt-4o-mini"
 
 # Optional - if you had issues loading the environment file, you can set the AWS values using the below code
 # os.environ['AWS_ACCESS_KEY_ID'] = ''

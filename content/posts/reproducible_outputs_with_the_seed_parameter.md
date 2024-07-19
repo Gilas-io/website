@@ -47,7 +47,7 @@ from utils.embeddings_utils import (
     distances_from_embeddings
 )
 
-GPT_MODEL = "gpt-3.5-turbo-1106"
+GPT_MODEL = "gpt-3.5-turbo"
 
 async def get_chat_response(
     system_message: str, user_request: str, seed: int = None, temperature: float = 0.7

@@ -63,7 +63,7 @@ client = OpenAI(
 
 for _ in range(1000):
     client.chat.completions.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4o-mini",
         messages=[{"role": "user", "content": "Hello"}],
         max_tokens=10,
     )
@@ -104,7 +104,7 @@ def completion_with_backoff(**kwargs):
     return client.chat.completions.create(**kwargs)
 
 
-completion_with_backoff(model="gpt-3.5-turbo", messages=[{"role": "user", "content": "Once upon a time,"}])
+completion_with_backoff(model="gpt-4o-mini", messages=[{"role": "user", "content": "Once upon a time,"}])
 ```
 
 #### مثال #2: استفاده از کتابخانه backoff
@@ -120,7 +120,7 @@ def completions_with_backoff(**kwargs):
     return client.chat.completions.create(**kwargs)
 
 
-completions_with_backoff(model="gpt-3.5-turbo", messages=[{"role": "user", "content": "Once upon a time,"}])
+completions_with_backoff(model="gpt-4o-mini", messages=[{"role": "user", "content": "Once upon a time,"}])
 ```
 
 #### مثال 3: پیاده‌سازی دستی بازگشت
@@ -170,5 +170,5 @@ def retry_with_exponential_backoff(
 def completions_with_backoff(**kwargs):
     return client.chat.completions.create(**kwargs)
 
-completions_with_backoff(model="gpt-3.5-turbo", messages=[{"role": "user", "content": "Once upon a time,"}])
+completions_with_backoff(model="gpt-4o-mini", messages=[{"role": "user", "content": "Once upon a time,"}])
 ```
