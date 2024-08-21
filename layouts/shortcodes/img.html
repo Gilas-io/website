@@ -1,3 +1,3 @@
 <center><a href="{{.Get "url"}}">
-    <img src="{{.Get "image"}}" alt="{{.Get "alt"}}" style="max-width: 500px;">
+    <img src="{{.Get "image"}}" alt="{{.Get "alt"}}" style="max-width: {{ .Get "width" | default "500px" }};">
 </a></center>

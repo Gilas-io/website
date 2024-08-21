@@ -3,7 +3,7 @@ title: "مقدمه‌ای بر GPT-4o"
 description: "راهنمای جامع برای استفاده از GPT-4o با ورودی‌های متنی، تصویری و ویدیویی و خروجی‌های متنی، صوتی و تصویری."
 tags:
 - gpt-4o
-weight: 2000
+weight: 2001
 og_image: "/posts/introduction_to_gpt4o/banner.jpg"
 ---
 

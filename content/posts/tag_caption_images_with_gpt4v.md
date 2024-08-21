@@ -4,7 +4,7 @@ description: "این Notebook توضیح می‌دهد که چگونه می‌ت
 tags:
 - image-processing
 - vision
-weight: 2000
+weight: 2001
 og_image: "/posts/tag_caption_images_with_gpt4v/banner.png" 
 ---
 
