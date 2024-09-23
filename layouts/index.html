@@ -60,8 +60,9 @@
 {{ .Content }}
 
 <h2>بلاگ</h2>
+<p>
 برای مطالعه‌ی پست‌های مربوط به موضوعات LLMها و اکوسیستم آن به <a href="/posts">بلاگ گیلاس</a> مراجعه کنید.
-
+</p>
 <div class="post-grid">
   {{ range first 8 (where .Site.RegularPages "Section" "posts") }}
   <article class="markdown post-item">
