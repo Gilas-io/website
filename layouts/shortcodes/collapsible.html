@@ -1,0 +1,65 @@
+{{/* Get the header text from the shortcode parameter */}}
+{{ $header := .Get "header" }}
+
+{{/* Generate a unique ID for this collapsible instance */}}
+{{ $id := (printf "collapsible-%s-%d" (.Page.File.BaseFileName) .Position.LineNumber) }}
+
+<div class="collapsible" id="{{ $id }}">
+  <div class="collapsible-header">
+    <span>{{ $header }}</span>
+    <span class="arrow">&#9654;</span>
+  </div>
+  <div class="collapsible-content">
+    {{ .Inner | markdownify }}
+  </div>
+</div>
+
+<style>
+  /* Style the collapsible header */
+  #{{ $id }} .collapsible-header {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Style the arrow icon */
+  #{{ $id }} .collapsible-header .arrow {
+    margin-left: 5px;
+    transition: transform 0.2s;
+  }
+
+  /* Style the collapsible content */
+  #{{ $id }} .collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  /* When the content is open */
+  #{{ $id }} .collapsible-content.open {
+    max-height: 1000px; /* Adjust this value if your content is taller */
+  }
+
+  /* Rotate the arrow when expanded */
+  #{{ $id }} .collapsible-header .arrow.expanded {
+    transform: rotate(90deg);
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var header = document.querySelector('#{{ $id }} .collapsible-header');
+    var content = document.querySelector('#{{ $id }} .collapsible-content');
+    var arrow = header.querySelector('.arrow');
+
+    header.addEventListener('click', function() {
+      if (content.classList.contains('open')) {
+        content.classList.remove('open');
+        arrow.classList.remove('expanded');
+      } else {
+        content.classList.add('open');
+        arrow.classList.add('expanded');
+      }
+    });
+  });
+</script>

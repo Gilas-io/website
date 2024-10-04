@@ -30,10 +30,10 @@ next: /quickstart
 
 و نهایتا ساخت یک کامیونیتی فعال از برنامه‌نویسان در جهت حمایت و گسترش ایده‌ها.
  
-برای ساخت کلید API
-ابتدا یک  [حساب کاربری جدید](https://dashboard.gilas.io) بسازید یا اگر صاحب حساب کاربری هستید [وارد پنل کاربری](https://dashboard.gilas.io) خود شوید. سپس، به صفحه [کلید API](https://dashboard.gilas.io/apiKey)  بروید و با کلیک روی دکمه “ساخت کلید API” یک کلید جدید برای دسترسی به [Gilas API](/apis/chat-completions) بسازید.
+برای ساخت کلید API ابتدا یک  [حساب کاربری جدید](https://dashboard.gilas.io) بسازید یا اگر صاحب حساب کاربری هستید [وارد پنل کاربری](https://dashboard.gilas.io) خود شوید. سپس، به صفحه [کلید API](https://dashboard.gilas.io/apiKey)  بروید و با کلیک روی دکمه “ساخت کلید API” یک کلید جدید برای دسترسی به [Gilas API](/apis/chat-completions) بسازید.
 
 اگر آشنایی با مدل‌‌های زبانی بزرگ (LLMs) ندارید, پیشنهاد ما این است که صفحه [راهنمای سریع](/quickstart) را مطالعه کنید. 
 
-
 {{</ columns >}}
+
+
