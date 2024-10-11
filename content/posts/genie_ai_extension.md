@@ -4,7 +4,7 @@ description: "افزونه‌ی Genie AI که برای استفاده در مح�
 tags:
 - extension
 - vscode
-weight: 2000
+weight:
 og_image: "/posts/genie_ai_extension/banner.png"
 ---
 

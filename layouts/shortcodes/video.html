@@ -1,0 +1,12 @@
+<video
+  style="text-align: center;"
+  {{ with .Get "src" }}src="{{ . }}"{{ end }}
+  {{ with .Get "width" }}width="{{ . }}"{{ end }}
+  {{ with .Get "height" }}height="{{ . }}"{{ end }}
+  {{ if ne (.Get "autoplay") "false" }}autoplay{{ end }}
+  {{ if ne (.Get "loop") "false" }}loop{{ end }}
+  {{ if ne (.Get "muted") "false" }}muted{{ end }}
+  {{ if .Get "controls" }}controls{{ end }}
+>
+  Your browser does not support the video tag.
+</video>
