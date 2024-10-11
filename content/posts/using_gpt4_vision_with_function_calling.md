@@ -4,7 +4,7 @@ description: "این Notebook نشان می‌دهد چگونه می‌توان 
 tags:
 - function-call
 - vision
-weight: 2001
+weight:
 og_image: "/posts/gpt_with_vision_for_video_understanding/banner.png" 
 ---
 

@@ -4,7 +4,7 @@ description: "این پروژه قدرت مدل GPT-4o را در تحلیل تص
 tags:
 - embeddings
 - gpt-4o
-weight: 2005
+weight: 2001
 og_image: "/posts/how_to_combine_gpt4o_with_rag_outfit_assistant/banner.png"
 ---
 
