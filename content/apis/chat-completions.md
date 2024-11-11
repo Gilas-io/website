@@ -3,7 +3,6 @@ title: 'v1/chat/completions/'
 weight: 1000
 ---
 
-
 مدل‌های تولید متن قابل دسترس از طریق Gilas API توانایی درک زبان طبیعی و کدنویسی را دارند. این مدل‌ها به ورودی‌های خود با خروجی‌های متنی که بسیار شبیه به جواب‌های انسانی هستند پاسخ می‌دهند. ورودی‌های این مدل‌ها همچنین به عنوان "prompt" شناخته می‌شوند. طراحی یک پرامپت اساساً چگونگی "برنامه‌ریزی" یک مدل زبانی بزرگ است.
 
 شما می‌توانید با استفاده از این مدل‌ها برنامه‌هایی بسازید که توانایی انجام کارهای زیر را دارند:
@@ -22,6 +21,11 @@ weight: 1000
 
 مدل‌های تولید متن لیستی از پیام‌ها را به عنوان ورودی دریافت کرده و یک پیام تولید شده توسط مدل را به عنوان خروجی ارائه می‌دهند. اگرچه اندپویت چت برای ایجاد گفتگوهای چند مرحله‌ای طراحی شده است، اما از این اندپوینت  برای انجام وظایف  تک‌ مرحله‌ای بدون هیچ گفتگویی نیز می‌توان استفاده کرد.
 
+## ساخت حساب کاربری
+
+ابتدا، یک  [حساب کاربری جدید](https://dashboard.gilas.io) ایجاد کنید یا اگر صاحب حساب کاربری هستید [وارد پنل کاربری](https://dashboard.gilas.io) خود شوید. سپس، به صفحه [کلید API](https://dashboard.gilas.io/apiKey)  بروید و با کلیک روی دکمه “ساخت کلید API” یک کلید جدید برای دسترسی به Gilas API بسازید. مطمئن شوید که این کلید را در جای امنی ذخیره کرده و آن را با کسی به اشتراک نگذارید.
+
+## ارسال درخواست
 نمونه‌ای از فواخوانی  APIی چت را در زیر مشاهده کنید:
 
 
@@ -107,8 +111,6 @@ func main() {
 	body, _ := ioutil.ReadAll(resp.Body)
 	fmt.Println(string(body))
 }
-
-
 ```
 
 {{< /tab >}}
@@ -161,7 +163,6 @@ makeRequest();
 
 {{< tab "Python" >}}
 
-
 ```python
 import requests
 import os
@@ -200,7 +201,6 @@ def make_request():
 if __name__ == "__main__":
     result = make_request()
     print(result)
-
 ```
 {{< /tab >}}
 {{< /tabs >}}
@@ -279,9 +279,9 @@ if __name__ == "__main__":
 
 
 ```bash
-curl https://api.openai.com/v1/chat/completions \
+curl https://api.gilas.io/v1/chat/completions \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -H "Authorization: Bearer $GILAS_API_KEY" \
   -d '{
     "model": "gpt-4o-mini",
     "response_format": { "type": "json_object" },
@@ -298,11 +298,11 @@ curl https://api.openai.com/v1/chat/completions \
   }'
 ```
 
- خروجی تولید شده به فرمت `JSON`:
+خروجی تولید شده به فرمت `JSON`:
 
- ```bash
+```bash
 "content": "{\"winner\": \"تیم لس آنجلس دوجرز\"}"`
- ```
+```
 
 
 ## استریم کردن خروجی
@@ -390,8 +390,10 @@ curl https://api.openai.com/v1/chat/completions \
 
 برای مشاهده یک مثال کامل از نحوه‌ی فراخوانی توابع می‌توانید پست [فراخوانی توابع توسط مدل](/posts/how_to_call_functions_with_chat_models) را مطالعه کنید.
 
+## اطلاعات تکمیلی
+در نظر داشته باشید که Gilas APIs از لحاظ فنی و نحوه کارکرد و قابلیت‌ها کاملا شبیه API ارایه دهنده های دیگر مانند OpenAI یا Mistral هستند. به همین منظور پیشنهاد میکنیم که برای آگاهی از نحوه‌ی کارکرد API ها به مستندات زیر مراجعه کنید.
 
-{{< hint info >}}
-**توجه**  
-در نظر داشته باشید که Gilas APIs از لحاظ فنی و نحوه کارکرد و قابلیت‌ها کاملا شبیه OpenAI APIs هستند. به همین منظور پیشنهاد میکنیم که برای آگاهی از نحوه‌ی کارکرد API ها به مستندات [OpenAI API Reference](https://platform.openai.com/docs/api-reference/chat) و [OpenAI Documentation](https://platform.openai.com/docs/guides/text-generation) ارجاع کنید.
-{{< /hint >}}
+- [OpenAI API Reference](https://platform.openai.com/docs/api-reference/chat)
+- [OpenAI Documentation](https://platform.openai.com/docs/guides/text-generation) 
+- [Mistral API Reference](https://docs.mistral.ai/api/#tag/chat)
+- [Mistral Documentation](https://docs.mistral.ai/capabilities/completion/) 

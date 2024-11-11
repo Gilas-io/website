@@ -1,6 +1,6 @@
 ---
 title: 'v1/moderations/'
-weight: 1003
+weight: 1004
 next: /posts/p1
 ---
 

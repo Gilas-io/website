@@ -13,6 +13,7 @@ headless = true
 
 - [**راهنمای APIs**]({{< relref "/apis/" >}})
   - [v1/chat/completions/]({{< relref "/apis/chat-completions" >}})
+  - [v1/fim/completions/]({{< relref "/apis/fim-completions" >}})
   - [v1/embeddings/]({{< relref "/apis/embeddings" >}})
   - [v1/audio/]({{< relref "/apis/audio" >}})
   - [v1/moderations/]({{< relref "/apis/moderations" >}})

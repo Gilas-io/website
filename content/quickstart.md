@@ -170,7 +170,7 @@ if __name__ == "__main__":
 {{< /tab >}}
 {{< /tabs >}}
 
-## استفاده از کتابخانه‌های OpenAI
+## استفاده از کتابخانه‌های OpenAI و mistralai
 
 در صورتی که با کتابخانه‌های OpenAI در زبان‌های Python و Node.js  آشنایی دارید می‌توانید با استفاده از این کتابخانه‌ها هم درخواست خود را به ‌GILAS API ارسال کنید.
 
@@ -189,7 +189,7 @@ setx GILAS_API_KEY "your-api-key-here"
 کتابخانه OpenAI را نصب کنید.
 
 ```shell
-npm install --save openai
+npm install --save openai mistralai
 # or
 yarn add openai
 
@@ -223,7 +223,7 @@ main();
 کتابخانه OpenAI را نصب کنید.
 
 ```shell
-pip install --upgrade openai
+pip install --upgrade openai mistralai
 
 ```
 
