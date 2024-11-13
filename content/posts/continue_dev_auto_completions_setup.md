@@ -1,10 +1,18 @@
 ---
-title: " تنظیم افزونه‌ی Continue.dev برای تکمیل خودکار کد"
+title: " اتصال افزونه‌ی Continue.dev به Gilas API برای تکمیل خودکار کد"
 description: "آموزش تنظیم افزونه‌ی محبوب Continue.dev برای تکمیل خودکار کد در با استفاده از مدل Codestral و از طریق Gilas API."
 tags:
-- code-auto-completion
+- code auto-completion
+- tab completion
+- AI-integration
+- code-editor
 - continue.dev
 - تکمیل کد
+- برنامه نویسی
+- هوش مصنوعی
+- افزونه
+- ویرایشگر کد
+- تکمیل خودکار کد
 weight: 2001
 og_image: "/posts/codestral_auto_completions_setup/banner.jpg"
 ---
@@ -17,7 +25,7 @@ og_image: "/posts/codestral_auto_completions_setup/banner.jpg"
 همچنین این مدل قابلیت تکمیل متن به زبان انگلیسی٬ فارسی و غیره را نیز دارد که در نوشتن کامنت یا متون دیگر می‌تواند مورد استفاده قرار بگیرد.
 
 {{< hint info >}}
-برای آگاهی بیشتر در مورد قابلیت‌های مدل Codestral به پست مربوط به [معرفی مدل Codestral](introduction_to_codestral) مراجعه کنید.
+برای آگاهی بیشتر در مورد قابلیت‌های مدل Codestral به پست مربوط به [معرفی مدل Codestral](/posts/introduction_to_codestral) مراجعه کنید.
 {{< /hint >}} 
 
 
