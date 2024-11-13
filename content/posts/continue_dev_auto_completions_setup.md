@@ -6,10 +6,10 @@ tags:
 - continue.dev
 - تکمیل کد
 weight: 2001
-og_image: "/posts/codestral_auto_completions_setup/banner.png"
+og_image: "/posts/codestral_auto_completions_setup/banner.jpg"
 ---
 
-{{< postcover src="/posts/codestral_auto_completions_setup/banner.png" >}}
+{{< postcover src="/posts/codestral_auto_completions_setup/banner.jpg" >}}
 
 درین پست نحوه تنظیم ابزار محبوب [Continue.dev](https://www.continue.dev/) برای تکمیل خودکار کد code auto-completion که گاهی از آن به عنوان Tab completion هم یاد می‌شود را با استفاده از مدل Codestral از طریق Gilas API بررسی میکنیم.
 

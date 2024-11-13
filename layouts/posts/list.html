@@ -75,13 +75,13 @@
     <h2>
       <a href="{{ .RelPermalink }}">{{ partial "docs/title.html" . }}</a>
     </h2>
-    <div class="post-meta">
+    <!-- <div class="post-meta">
       {{ if .Params.tags }}
         {{ range .Params.tags }}
           <span class="keyword"><a href="/tags/{{ . | urlize }}">{{ . }}</a></span>
         {{ end }}
       {{ end }}
-    </div>
+    </div> -->
     <p>
       {{- .Summary -}}
       {{ if .Truncated }}
