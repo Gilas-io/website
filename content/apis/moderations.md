@@ -40,7 +40,7 @@ curl https://api.gilas.io/v1/moderations \
 ```shell
 {
   "id": "modr-XXXXX",
-  "model": "text-moderation-007",
+  "model": "omni-moderation-latest",
   "results": [
     {
       "flagged": true,
