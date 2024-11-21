@@ -90,7 +90,7 @@ og_image: "/posts/codestral_auto_completions_setup/banner.jpg"
       "apiKey": "Your-Gilas-Api-Key"
     }
   ],
-  
+
   "tabAutocompleteModel": {
     "title": "Codestral",
     "provider": "mistral",
@@ -104,8 +104,11 @@ og_image: "/posts/codestral_auto_completions_setup/banner.jpg"
 }
 ```
 
-5. **تکمیل خودکار کد:**
-   - پس از ذخیره فایل، باید تکمیل شدن خطوط برنامه به صورت خودکار اتفاق بیفتد.
+پس از ذخیره فایل، باید تکمیل شدن خطوط برنامه به صورت خودکار اتفاق بیفتد.
+
+همچنین با باز کردن محیط Continue باید لیست مدل‌های ثبت شده برای چت را نیز مشاهده کنید.
+
+{{< img image="/posts/codestral_auto_completions_setup/result.png" alt="تکمیل خودکار کد" width="750px">}}
 
 ## نتیجه‌گیری
 
