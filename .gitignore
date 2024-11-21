@@ -1,2 +1,3 @@
 *.toml
-post-drafts
+tmp
+public
