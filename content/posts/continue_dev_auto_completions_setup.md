@@ -48,9 +48,61 @@ og_image: "/posts/codestral_auto_completions_setup/banner.jpg"
 {{< img image="/posts/codestral_auto_completions_setup/step1.png" alt="تنظیمات افزونه" width="750px">}}
 
 4. **پیکربندی مدل Codestral:**
-   - در فایل `config.json` باز شده، مدل Codestral را در لیست `TabAutoCompleteModel` همراه با آدرس Gilas API Url و کلید API ساخته شده در مرحله اول قرار دهید. همچنین می‌توانید از این مدل به عنوان مدلی برای چت کردن (لیست `models`) نیز استفاده کنید.
+   - در فایل `config.json` باز شده، مدل Codestral را در لیست `TabAutoCompleteModel` همراه با آدرس Gilas API Url و کلید API ساخته شده در مرحله اول قرار دهید. همچنین می‌توانید از دیگر مدلهای گیلاس برای چت کردن (لیست `models`) نیز استفاده کنید.
 
-{{< img image="/posts/codestral_auto_completions_setup/step2.png" alt="پیکربندی مدل Codestral" width="750px">}}
+```json
+// config.json
+{
+  "models": [
+    {
+      "title": "O1 mini",
+      "model": "o1-mini",
+      "provider": "openai",
+      "apiBase": "https://api.gilas.io/v1",
+      "apiKey": "Your-Gilas-Api-Key"
+    },
+    {
+      "title": "GPT-4o",
+      "model": "gpt-4o",
+      "provider": "openai",
+      "apiBase": "https://api.gilas.io/v1",
+      "apiKey": "Your-Gilas-Api-Key"
+    },
+    {
+      "title": "GPT-4o Mini",
+      "model": "gpt-4o-mini",
+      "provider": "openai",
+      "apiBase": "https://api.gilas.io/v1",
+      "apiKey": "Your-Gilas-Api-Key"
+    },
+    {
+      "title": "Mistral Large",
+      "model": "mistral-large-latest",
+      "provider": "mistral",
+      "apiBase": "https://api.gilas.io/v1",
+      "apiKey": "Your-Gilas-Api-Key"
+    },
+    {
+      "title": "Mistral Small",
+      "model": "mistral-small-latest",
+      "provider": "mistral",
+      "apiBase": "https://api.gilas.io/v1",
+      "apiKey": "Your-Gilas-Api-Key"
+    }
+  ],
+  
+  "tabAutocompleteModel": {
+    "title": "Codestral",
+    "provider": "mistral",
+    "model": "codestral-latest",
+    "apiBase": "https://api.gilas.io/v1",
+    "apiKey": "Your-Gilas-Api-Key"
+  },
+  
+  // ادامه‌ی فایل
+  // ...
+}
+```
 
 5. **تکمیل خودکار کد:**
    - پس از ذخیره فایل، باید تکمیل شدن خطوط برنامه به صورت خودکار اتفاق بیفتد.
