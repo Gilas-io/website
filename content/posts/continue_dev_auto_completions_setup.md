@@ -13,7 +13,7 @@ tags:
 - افزونه
 - ویرایشگر کد
 - تکمیل خودکار کد
-weight: 2001
+weight: 2000
 og_image: "/posts/codestral_auto_completions_setup/banner.jpg"
 ---
 

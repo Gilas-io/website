@@ -6,7 +6,7 @@ tags:
 - codestral
 - code-completions
 - تکمیل کد
-weight: 2000
+weight: 2001
 og_image: "/posts/introduction_to_codestral/banner.png"
 ---
 
