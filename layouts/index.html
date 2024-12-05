@@ -1,85 +1,379 @@
-{{ define "main" }}
-<style>
-  p {
-    line-height: normal;
-  }
-  li {
-    line-height: normal;
-  }
-  .post-grid {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    gap: 10px;
-    padding: 10px;
-  }
-  .post-item {
-    width: calc(25% - 20px);
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
-  }
-  .post-item:hover {
-    transform: translateY(-3px);
-  }
-  .post-cover {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ddd;
-    border-radius: 8px 8px 0 0;
-  }
-  .post-item h2 {
-    font-size: 1.0em;
-    line-height: normal;
-    margin-bottom: 10px;
-    color: #222
-  }
-  .post-item a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  .post-item a:hover {
-    text-decoration: underline;
-  }
-  @media (max-width: 1900px) {
-    .post-item {
-      width: calc(50% - 20px);
-    }
-  }
-  @media (max-width: 480px) {
-    .post-item {
-      width: 100%;
-    }
-  }
-</style>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>پلتفرم هوش مصنوعی گـیـلاس</title>
+    <!-- Link to Vazirmatn Font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-{{ .Content }}
+        /* Set a solid background color and font */
+        body {
+            background-color: #015252;
+            color: #e0e1dd;
+            font-family: 'Vazirmatn', sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            direction: rtl; /* Ensure entire document is RTL */
+            overflow-x: hidden; /* Prevent horizontal scroll when panel is open */
+        }
 
-<h2>بلاگ</h2>
-<p>
-برای مطالعه‌ی پست‌های مربوط به موضوعات LLMها و اکوسیستم آن به <a href="/posts">بلاگ گیلاس</a> مراجعه کنید.
-</p>
-<div class="post-grid">
-  {{ range first 8 (where .Site.RegularPages "Section" "posts") }}
-  <article class="markdown post-item">
-    {{ if .Params.og_image }}
-    <img src="{{ .Params.og_image }}" alt="Post Cover Image" class="post-cover" />
-    {{ end }}
-    <h2>
-      <a href="{{ .RelPermalink }}">{{ partial "docs/title.html" . }}</a>
-    </h2>
-    <p>
-      {{- .Summary | truncate 100}}
-      {{ if .Truncated }}
-        <a href="{{ .RelPermalink }}"></a>
-      {{ end }}
-    </p>
-  </article>
-  {{ end }}
-</div>
+        /* Navigation bar styles */
+        nav {
+            background-color: #013232;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-size: 1em;
+            position: relative;
+            z-index: 1000; /* Ensure nav is above other elements */
+        }
 
-{{ end }}
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-start; /* Align items to the right for RTL */
+        }
+
+        nav ul li {
+            margin-right: 30px; /* Margin on the left for RTL alignment */
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #66fcf1;
+        }
+
+
+
+        /* Hamburger Button Styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            margin-left: auto; /* Push to left in RTL */
+        }
+
+        .hamburger:focus {
+            outline: none;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 2px;
+            transition: all 0.3s linear;
+            position: relative;
+            transform-origin: 1px;
+        }
+
+        /* Hamburger animation when active */
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(45deg);
+        }
+
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(-45deg);
+        }
+
+        /* Side Panel Styles */
+        .side-panel {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: #013232;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            z-index: 999; /* Below nav */
+        }
+
+        .side-panel ul {
+            flex-direction: column;
+            align-items: flex-start;
+            padding-left: 20px;
+        }
+
+        .side-panel ul li {
+            margin: 20px 0;
+            margin-right: 20px;
+        }
+
+        .side-panel a {
+            font-size: 1.2em;
+        }
+
+        /* Main content styles */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            padding: 20px;
+            position: relative;
+            text-align: center; /* Center text */
+        }
+
+        h1 {
+            color: #FFFFE0;
+            font-size: 5em;
+            margin-bottom: 0.5em;
+            line-height: 1.2;
+            font-weight: 700;
+            max-width: 90%; /* Allow more space for text to wrap */
+            white-space: normal; /* Allow text to wrap */
+            word-wrap: break-word; /* Break long words */
+        }
+
+        h2 {
+            color: #FFFFFF;;
+            font-size: 4.5em;
+            line-height: 1.2;
+            font-weight: 700;
+            max-width: 90%; /* Allow more space for text to wrap */
+            white-space: normal; /* Allow text to wrap */
+            word-wrap: break-word; /* Break long words */
+        }
+
+        .login-button{
+            font-family: 'Vazirmatn', sans-serif;
+            margin-top: 120px;
+            padding: 12px 34px;
+            font-size: 1.5em;
+            background-color: #FFFFE0;
+            border: 2px solid #f9f9ac;
+            color: #015252; 
+            border-radius: 50px;
+            cursor: pointer; 
+        }
+
+        .login-button:hover {
+            background-color: #fefeca;
+            border: 1px solid #fefe00;
+        }
+
+        .cursor {
+            display: inline-block;
+            margin-right: 5px; /* Margin on the right for RTL */
+            animation: blink 0.7s infinite;
+            font-weight: bold;
+        }
+
+        @keyframes blink {
+            0%, 50% {
+                opacity: 1;
+            }
+            51%, 100% {
+                opacity: 0;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none; /* Hide nav links */
+            }
+
+            .hamburger {
+                display: flex; /* Show hamburger */
+            }
+
+            .side-panel ul {
+                display: flex;
+            }
+
+            .side-panel a {
+                color: #fff;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+            .side-panel a:hover {
+                color: #66fcf1;
+            }
+
+            h1, h2 {
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 3.5em;
+            }
+
+            h2 {
+                font-size: 3em;
+            }
+
+            main {
+                align-items: center;
+                text-align: center;
+            }
+
+            nav {
+                font-size: 1em;
+            }
+
+            nav ul {
+                justify-content: right;
+            }
+
+            nav ul li {
+                margin-right: 20px;
+            }
+
+            .login-button {
+                padding: 12px 20px;
+                font-size: 1.2em;
+                position: fixed;
+                bottom: 150px;
+                margin-top: 0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <!-- Hamburger Button -->
+        <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="side-panel">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+        <ul>
+            <li><a href="https://dashboard.gilas.io">پنل کاربری</a></li>
+            <li><a href="/quickstart">مستندات</a></li>
+            <li><a href="/models/">مدل‌ها</a></li>
+            <li><a href="/posts/">بلاگ</a></li>
+            <li><a href="/terms/">شرایط و قوانین</a></li>
+            <li><a href="/privacy/">حریم خصوصی</a></li>
+        </ul>
+    </nav>
+
+    <!-- Side Panel -->
+    <div class="side-panel" id="side-panel">
+        <ul>
+          <li><a href="https://dashboard.gilas.io">پنل کاربری</a></li>
+          <li><a href="/quickstart">مستندات</a></li>
+          <li><a href="/models/">مدل‌ها</a></li>
+          <li><a href="/posts/">بلاگ</a></li>
+          <li><a href="/terms/">شرایط و قوانین</a></li>
+          <li><a href="/privacy/">حریم خصوصی</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <h1>
+             پـلـتـفـرم هـوش مصـنـوعی گـیـلاس
+        </h1>
+        <h2>
+            <span id="dynamic-text" style="color: #FFFFFF;"> </span>
+            <span class="cursor">|</span>
+        </h2>
+
+        <button class="login-button" onclick="window.location.href='https://chat.gilas.io'">چت رایگان</button>
+    </main>
+
+
+    <!-- JavaScript for dynamic text and navigation panel -->
+    <script>
+        // Typing Effect Script
+        const dynamicText = document.getElementById('dynamic-text');
+        const cursor = document.querySelector('.cursor');
+        const replacements = [
+            "دسترسی آزاد به مدل‌های زبانی بزرگ",
+            "بدون پرداخت هزینه‌ی اشتراک ماهانه",
+            "یک اینترفـیس چـت برای همه‌ی مدل‌ها",
+            "دستـرسی API برای توسعه دهندگان",
+            "منطـبق با OpenAI API",
+            "سهمیه‌ی توکن بالا برای هر مدل",
+            "بدون نیاز به VPN یا فیلترشکن",
+            "امکان پرداخت هزینه‌ها از داخل ایران",
+        ];
+        let currentIndex = 0;
+        let isDeleting = false;
+        let text = '';
+        const typingSpeed = 90;
+        const deletingSpeed = 60;
+        const pause = 3000;
+
+        function type() {
+            const fullText = replacements[currentIndex];
+            if (isDeleting) {
+                text = fullText.substring(0, text.length - 1);
+            } else {
+                text = fullText.substring(0, text.length + 1);
+            }
+
+            dynamicText.textContent = text;
+
+            let speed = isDeleting ? deletingSpeed : typingSpeed;
+
+            if (!isDeleting && text === fullText) {
+                speed = pause;
+                isDeleting = true;
+            } else if (isDeleting && text === '') {
+                isDeleting = false;
+                currentIndex = (currentIndex + 1) % replacements.length;
+                speed = typingSpeed;
+            }
+
+            setTimeout(type, speed);
+        }
+
+        // Start the typing effect
+        type();
+
+        // Navigation Panel Toggle Script
+        const hamburger = document.querySelector('.hamburger');
+        const sidePanel = document.getElementById('side-panel');
+
+        hamburger.addEventListener('click', () => {
+            const isActive = hamburger.classList.toggle('active');
+            if (isActive) {
+                sidePanel.style.width = '250px';
+                hamburger.setAttribute('aria-expanded', 'true');
+            } else {
+                sidePanel.style.width = '0';
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Close the side panel when clicking outside of it
+        window.addEventListener('click', (e) => {
+            if (!sidePanel.contains(e.target) && !hamburger.contains(e.target) && sidePanel.style.width === '250px') {
+                sidePanel.style.width = '0';
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+        });
+    </script>
+</body>
+</html>
