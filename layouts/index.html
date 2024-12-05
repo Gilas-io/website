@@ -236,7 +236,7 @@
             }
 
             nav {
-                font-size: 1em;
+                font-size: 1.5em;
             }
 
             nav ul {
@@ -249,7 +249,7 @@
 
             .login-button {
                 padding: 12px 20px;
-                font-size: 1.2em;
+                font-size: 2em;
                 position: fixed;
                 bottom: 150px;
                 margin-top: 0px;
@@ -268,6 +268,7 @@
         </button>
         <ul>
             <li><a href="https://dashboard.gilas.io">پنل کاربری</a></li>
+            <li><a href="https://chat.gilas.io">چت</a></li>
             <li><a href="/quickstart">مستندات</a></li>
             <li><a href="/models/">مدل‌ها</a></li>
             <li><a href="/posts/">بلاگ</a></li>
@@ -280,6 +281,7 @@
     <div class="side-panel" id="side-panel">
         <ul>
           <li><a href="https://dashboard.gilas.io">پنل کاربری</a></li>
+          <li><a href="https://chat.gilas.io">چت</a></li>
           <li><a href="/quickstart">مستندات</a></li>
           <li><a href="/models/">مدل‌ها</a></li>
           <li><a href="/posts/">بلاگ</a></li>
@@ -308,13 +310,14 @@
         const dynamicText = document.getElementById('dynamic-text');
         const cursor = document.querySelector('.cursor');
         const replacements = [
-            "دسترسی آزاد به مدل‌های زبانی بزرگ",
-            "بدون پرداخت هزینه‌ی اشتراک ماهانه",
-            "یک اینترفـیس چـت برای همه‌ی مدل‌ها",
-            "دستـرسی API برای توسعه دهندگان",
-            "منطـبق با OpenAI API",
-            "سهمیه‌ی توکن بالا برای هر مدل",
+            "دسترسی آزاد جامعه به AI",
             "بدون نیاز به VPN یا فیلترشکن",
+            "بدون پرداخت هزینه‌ی اشتراک ماهانه",
+            "بدون نیاز به کارت اعتباری و هزینه‌های جانبی",
+            "دستـرسی API برای توسعه دهندگان",
+            "دسترسی به همه‌ی مدل‌ها از طریق یک API",
+            "پشتیبانی از مدل‌های OpenAI, Mistral و Anthropic",
+            "سهمیه‌ی توکن بالا برای هر مدل",
             "امکان پرداخت هزینه‌ها از داخل ایران",
         ];
         let currentIndex = 0;
