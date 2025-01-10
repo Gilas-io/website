@@ -22,4 +22,5 @@ headless = true
 <br />
 
 - [**بلاگ**]({{< relref "/posts" >}})
+- [**تماس با ما**]({{< relref "/contact" >}})
 <br />

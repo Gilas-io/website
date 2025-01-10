@@ -174,21 +174,44 @@
             word-wrap: break-word; /* Break long words */
         }
 
-        .login-button{
+        .button-container {
+            display: flex;
+            gap: 40px;
+            margin-top: 120px; 
+            flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+            justify-content: center; 
+        }
+
+        button {
             font-family: 'Vazirmatn', sans-serif;
-            margin-top: 120px;
             padding: 12px 34px;
             font-size: 1.5em;
+            cursor: pointer; 
+        }
+
+        .chat-button{
             background-color: #FFFFE0;
             border: 2px solid #f9f9ac;
             color: #015252; 
             border-radius: 50px;
+        }
+
+        .chat-button:hover {
+            background-color: #fefeca;
+            border: 1px solid #fefe00;
+        }
+
+        .api-button{
+            background-color: #057373;
+            border: 2px solid #068888;
+            color: #fff; 
+            border-radius: 50px;
             cursor: pointer; 
         }
 
-        .login-button:hover {
-            background-color: #fefeca;
-            border: 1px solid #fefe00;
+        .api-button:hover {
+            background-color: #068888;
+            border: 1px solid #068888;
         }
 
         .cursor {
@@ -260,10 +283,22 @@
                 margin-right: 20px;
             }
 
-            .login-button {
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            button {
                 padding: 12px 20px;
                 font-size: 1.2em;
+            }
+
+            .chat-button {
                 margin-top: 70px;
+            }
+
+            .api-button {
+                margin-top: 20px;
             }
         }
     </style>
@@ -280,11 +315,12 @@
         <ul>
             <li><a href="https://dashboard.gilas.io">پنل کاربری</a></li>
             <li><a href="https://chat.gilas.io">چت</a></li>
-            <li><a href="/quickstart">مستندات</a></li>
+            <li><a href="/quickstart">مستندات فنی</a></li>
             <li><a href="/models/">مدل‌ها</a></li>
             <li><a href="/posts/">بلاگ</a></li>
             <li><a href="/terms/">شرایط و قوانین</a></li>
             <li><a href="/privacy/">حریم خصوصی</a></li>
+            <li><a href="/contact/"> تماس با ما</a></li>
         </ul>
     </nav>
 
@@ -293,11 +329,12 @@
         <ul>
           <li><a href="https://dashboard.gilas.io">پنل کاربری</a></li>
           <li><a href="https://chat.gilas.io">چت</a></li>
-          <li><a href="/quickstart">مستندات</a></li>
+          <li><a href="/quickstart">مستندات فنی</a></li>
           <li><a href="/models/">مدل‌ها</a></li>
           <li><a href="/posts/">بلاگ</a></li>
           <li><a href="/terms/">شرایط و قوانین</a></li>
           <li><a href="/privacy/">حریم خصوصی</a></li>
+          <li><a href="/contact/"> تماس با ما</a></li>
         </ul>
     </div>
 
@@ -311,7 +348,10 @@
             <span class="cursor">|</span>
         </h2>
 
-        <button class="login-button" onclick="window.location.href='https://chat.gilas.io'">چت با AI</button>
+        <div class="button-container">
+            <button class="chat-button" onclick="window.location.href='https://chat.gilas.io'">چت با AI</button>
+            <button class="api-button" onclick="window.location.href='https://platform.gilas.io'">ساخت کلید API</button>
+        </div>
     </main>
 
 
