@@ -305,9 +305,8 @@
             <div></div>
         </button>
         <ul>
+            <li><a href="/intro">معرفی گیلاس</a></li>
             <li><a href="https://dashboard.gilas.io">پنل کاربری</a></li>
-            <li><a href="https://chat.gilas.io">چت</a></li>
-            <li><a href="/quickstart">مستندات فنی</a></li>
             <li><a href="/models/">مدل‌ها</a></li>
             <li><a href="/posts/">بلاگ</a></li>
             <li><a href="/terms/">شرایط و قوانین</a></li>
@@ -319,9 +318,8 @@
     <!-- Side Panel -->
     <div class="side-panel" id="side-panel">
         <ul>
-          <li><a href="https://dashboard.gilas.io">پنل کاربری</a></li>
-          <li><a href="https://chat.gilas.io">چت</a></li>
-          <li><a href="/quickstart">مستندات فنی</a></li>
+            <li><a href="/intro">معرفی گیلاس</a></li>
+            <li><a href="https://dashboard.gilas.io">پنل کاربری</a></li>
           <li><a href="/models/">مدل‌ها</a></li>
           <li><a href="/posts/">بلاگ</a></li>
           <li><a href="/terms/">شرایط و قوانین</a></li>
@@ -342,7 +340,7 @@
 
         <div class="button-container">
             <button class="chat-button" onclick="window.location.href='https://chat.gilas.io'">چت با AI</button>
-            <button class="api-button" onclick="window.location.href='https://gilas.io/quickstart/'">مستندات API</button>
+            <button class="api-button" onclick="window.location.href='https://gilas.io/intro/'">مستندات API</button>
         </div>
     </main>
 
@@ -354,14 +352,14 @@
         const cursor = document.querySelector('.cursor');
         const replacements = [
             "دسترسی آزاد جامعه به AI",
-            "بدون نیاز به VPN یا فیلترشکن",
             "بدون پرداخت هزینه‌ی اشتراک ماهانه",
-            "بدون نیاز به کارت اعتباری و هزینه‌های جانبی",
             "دستـرسی API برای توسعه دهندگان",
+            "بدون نیاز به کارت اعتباری و هزینه‌های جانبی",
+            "امکان پرداخت هزینه‌ها از داخل ایران",
+            "بدون نیاز به VPN یا فیلترشکن",
             "دسترسی به همه‌ی مدل‌ها از طریق یک API",
             "پشتیبانی از مدل‌های OpenAI, Mistral و Anthropic",
             "سهمیه‌ی توکن بالا برای هر مدل",
-            "امکان پرداخت هزینه‌ها از داخل ایران",
         ];
         let currentIndex = 0;
         let isDeleting = false;

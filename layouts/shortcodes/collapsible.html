@@ -1,5 +1,6 @@
-{{/* Get the header text from the shortcode parameter */}}
+{{/* Get the header and arrow text from the shortcode parameters */}}
 {{ $header := .Get "header" }}
+{{ $arrowText := .Get "arrowText" | default "(کلیک کنید)" }}  <!-- Default value if not provided -->
 
 {{/* Generate a unique ID for this collapsible instance */}}
 {{ $id := (printf "collapsible-%s-%d" (.Page.File.BaseFileName) .Position.LineNumber) }}
@@ -7,7 +8,7 @@
 <div class="collapsible" id="{{ $id }}">
   <div class="collapsible-header">
     <span>{{ $header }}</span>
-    <span class="arrow">&#9654;</span>
+    <span class="arrow">{{ $arrowText }}</span>  <!-- Use the arrow text parameter -->
   </div>
   <div class="collapsible-content">
     {{ .Inner | markdownify }}
@@ -25,7 +26,13 @@
   /* Style the arrow icon */
   #{{ $id }} .collapsible-header .arrow {
     margin-left: 5px;
-    transition: transform 0.2s;
+    margin-right: 5px;
+    font-size: 10px;
+  }
+
+  /* Add hover style to the arrow icon */
+  #{{ $id }} .collapsible-header:hover .arrow {
+    color: blue; /* Change this to your desired hover color */
   }
 
   /* Style the collapsible content */
@@ -38,11 +45,6 @@
   /* When the content is open */
   #{{ $id }} .collapsible-content.open {
     max-height: 1000px; /* Adjust this value if your content is taller */
-  }
-
-  /* Rotate the arrow when expanded */
-  #{{ $id }} .collapsible-header .arrow.expanded {
-    transform: rotate(90deg);
   }
 </style>
 
