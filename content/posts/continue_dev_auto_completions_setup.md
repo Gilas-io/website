@@ -53,28 +53,25 @@ og_image: "/posts/codestral_auto_completions_setup/banner.jpg"
 ```json
 // config.json
 {
+   // Set "codestral-latest" as tab autocompletion model
+   "tabAutocompleteModel": {
+    "title": "Codestral",
+    "provider": "mistral",
+    "model": "codestral-latest",
+    "apiBase": "https://api.gilas.io/v1",
+    "apiKey": "Your-Gilas-Api-Key"
+  },
+
+  // set chat models from different providers
   "models": [
     {
-      "title": "O1 mini",
+      "title": "o1 mini",
       "model": "o1-mini",
       "provider": "openai",
       "apiBase": "https://api.gilas.io/v1",
       "apiKey": "Your-Gilas-Api-Key"
     },
-    {
-      "title": "GPT-4o",
-      "model": "gpt-4o",
-      "provider": "openai",
-      "apiBase": "https://api.gilas.io/v1",
-      "apiKey": "Your-Gilas-Api-Key"
-    },
-    {
-      "title": "GPT-4o Mini",
-      "model": "gpt-4o-mini",
-      "provider": "openai",
-      "apiBase": "https://api.gilas.io/v1",
-      "apiKey": "Your-Gilas-Api-Key"
-    },
+    // ... other OpenAI models ...
     {
       "title": "Mistral Large",
       "model": "mistral-large-latest",
@@ -82,24 +79,16 @@ og_image: "/posts/codestral_auto_completions_setup/banner.jpg"
       "apiBase": "https://api.gilas.io/v1",
       "apiKey": "Your-Gilas-Api-Key"
     },
+    // ... other Mistral models ...
     {
-      "title": "Mistral Small",
-      "model": "mistral-small-latest",
-      "provider": "mistral",
+      "title": "Claude 3.5 Sonnet",
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-latest",
       "apiBase": "https://api.gilas.io/v1",
       "apiKey": "Your-Gilas-Api-Key"
     }
+    // ... other Anthropic models ...
   ],
-
-  "tabAutocompleteModel": {
-    "title": "Codestral",
-    "provider": "mistral",
-    "model": "codestral-latest",
-    "apiBase": "https://api.gilas.io/v1",
-    "apiKey": "Your-Gilas-Api-Key"
-  },
-  
-  // ادامه‌ی فایل
   // ...
 }
 ```
