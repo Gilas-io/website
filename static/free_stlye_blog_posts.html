@@ -61,15 +61,19 @@
             a:hover {
                 text-decoration: underline;
             }
-            /* Removed media queries */
-            @media (max-width: 1900px) {
+            @media (min-width: 1600px) {
                 .post-item {
-                    width: calc(25% - 20px);
+                    width: calc(25% - 20px); /* 4 items per row */
+                }
+            }
+            @media (max-width: 1599px) and (min-width: 480px) {
+                .post-item {
+                    width: calc(50% - 20px); /* 2 items per row */
                 }
             }
             @media (max-width: 480px) {
                 .post-item {
-                    width: 100%;
+                    width: 100%; /* 1 item per row */
                 }
             }
         </style>
