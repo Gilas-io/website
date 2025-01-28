@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+        <title>Page Title</title>
+        <style>
+            .post-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                padding: 20px;
+                direction: rtl;
+                text-align: right;
+                font-family: 'Vazirmatn', sans-serif;
+            }
+            .post-item {
+                width: calc(25% - 20px);
+                box-sizing: border-box;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 20px;
+                background-color: #fff;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                transition: transform 0.2s ease-in-out;
+            }
+            .post-item:hover {
+                transform: translateY(-10px);
+            }
+            .post-cover {
+                width: 100%;
+                height: auto;
+                border-bottom: 1px solid #ddd;
+                border-radius: 8px 8px 0 0;
+            }
+            .post-meta {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-bottom: 15px;
+                font-size: 0.9em;
+                color: #555;
+            }
+            .keyword {
+                background-color: #f1f1f1;
+                padding: 5px 10px 0;
+                border-radius: 4px;
+            }
+            h2 {
+                font-size: 1.3em;
+                margin-bottom: 10px;
+            }
+            p {
+                font-size: 1em;
+                line-height: 1.6;
+                color: #333;
+            }
+            a {
+                color: #007bff;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            /* Removed media queries */
+            @media (max-width: 1900px) {
+                .post-item {
+                    width: calc(25% - 20px);
+                }
+            }
+            @media (max-width: 480px) {
+                .post-item {
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="post-grid">
+            <article class="markdown book-post post-item">
+                <img src="https://gilas.io/posts/codestral_auto_completions_setup/banner.jpg" alt="Post Cover Image" class="post-cover" />
+                <h2><a href="/posts/continue_dev_auto_completions_setup/">تکمیل خودکار کد با Gilas API و Continue.dev</a></h2>
+                <p>
+                    درین راهنما نحوه تنظیم افزونه‌ی محبوب Continue.dev برای تکمیل خودکار کد code auto-completion که گاهی از آن به عنوان Tab completion هم یاد می‌شود را با استفاده از Gilas API بررسی میکنیم. 
+                    <a href="/posts/continue_dev_auto_completions_setup/">...</a>
+                </p>
+            </article>
+            <article class="markdown book-post post-item">
+                <img src="https://gilas.io/posts/integrate_cursor_code_editor_with_gilas/banner.png" alt="Post Cover Image" class="post-cover" />
+                <h2><a href="/posts/integrate_cursor_code_editor_with_gilas/">اتصال ادیتور Cursor به Gilas API</a></h2>
+                <p>
+                    اگر از ادیتور محبوب Cursor برای کدنویسی استفاده می‌کنید٬ خبر خوب این است که می‌توانید آن را به APIهای گیلاس متصل کرده تا به مدل‌های OpenAI از جمله GPT-4o و o1 در محیط ادیتور دسترسی داشته باشید.
+                     <a href="/posts/integrate_cursor_code_editor_with_gilas/">...</a>
+                </p>
+            </article>
+            <article class="markdown book-post post-item">
+                <img src="/posts/build_a_chatbot_with_langchain/banner.jpg" alt="Post Cover Image" class="post-cover" />
+                <h2><a href="/posts/build_a_chatbot_with_langchain/">ساخت چت‌ بات با استفاده از LangChain</a></h2>
+                <p>
+                    در این راهنما با مثالی از طراحی و پیاده‌سازی یک چت‌بات با استفاده از LangChain و Gilas API آشنا می‌شوید که از قابلیت هایی مثل Agent و RAG که از طریق LangChain قابل دسترس هستند استفاده می‌کند.
+                    <a href="/posts/build_a_chatbot_with_langchain/">...</a>
+                </p>
+            </article>
+            <article class="markdown book-post post-item">
+                <img src="/posts/question_answering_using_embeddings/banner.png" alt="Post Cover Image" class="post-cover" />
+                <h2><a href="/posts/question_answering_using_embeddings/">سیستم سوال و جواب با embeddings</a></h2>
+                <p>
+                    مدل‌های embeddings برای بازیابی متون مشابه و مرتبط استفاده می‌شوند. ازین طریق می‌توان اطلاعاتی را که یک LLM از آن بی‌خبر است را در زمان مناسب در اختیار آن قرار داد تا بتواند به سوالات کاربران پاسخ صحیح بدهد. <a href="/posts/question_answering_using_embeddings/">...</a>
+                </p>
+            </article>
+        </div>
+    </body>
+</html>
