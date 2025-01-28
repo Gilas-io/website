@@ -4,6 +4,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
         <title>Page Title</title>
         <style>
+            body {
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+            }
             .post-grid {
                 display: flex;
                 flex-wrap: wrap;
@@ -66,12 +71,12 @@
                     width: calc(25% - 20px); /* 4 items per row */
                 }
             }
-            @media (max-width: 1599px) and (min-width: 480px) {
+            @media (max-width: 1000px) {
                 .post-item {
                     width: calc(50% - 20px); /* 2 items per row */
                 }
             }
-            @media (max-width: 480px) {
+            @media (max-width: 500px) {
                 .post-item {
                     width: 100%; /* 1 item per row */
                 }
@@ -112,5 +117,39 @@
                 </p>
             </article>
         </div>
+        <script>
+            let lastHeight = 0;
+            
+            function updateParentHeight() {
+                const height = document.querySelector('.post-grid').offsetHeight;
+                
+                // Only update if height has actually changed and is not 0
+                if (height !== lastHeight && height > 0) {
+                    lastHeight = height;
+                    window.parent.postMessage({ type: 'setHeight', height: height + 40 }, '*');
+                }
+            }
+            
+            // Update height when content loads
+            window.addEventListener('load', updateParentHeight);
+            
+            // Use a debounced resize handler
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(updateParentHeight, 100);
+            });
+            
+            // Update height when content changes
+            const observer = new MutationObserver(() => {
+                requestAnimationFrame(updateParentHeight);
+            });
+            
+            observer.observe(document.querySelector('.post-grid'), { 
+                childList: true,
+                subtree: true,
+                attributes: true
+            });
+        </script>
     </body>
 </html>
