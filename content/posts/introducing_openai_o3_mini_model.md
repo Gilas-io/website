@@ -6,7 +6,7 @@ tags:
 - omni
 - o3-mini
 weight: 2000
-og_image: "/posts/introducing_openai_o3_mini_model/banner.png"
+og_image: "/posts/introducing_openai_o3_mini_model/banner.jpg"
 ---
 
 {{< postcover src="/posts/introducing_openai_o3_mini_model/banner.jpg" >}}
