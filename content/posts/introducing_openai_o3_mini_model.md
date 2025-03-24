@@ -5,7 +5,7 @@ description: "مدل جدید o3-mini که این هفته توسط OpenAI رو�
 tags:
 - omni
 - o3-mini
-weight: 2000
+weight: 2001
 og_image: "/posts/introducing_openai_o3_mini_model/banner.jpg"
 ---
 

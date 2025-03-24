@@ -5,7 +5,7 @@ tags:
 - هوش مصنوعی
 - مدل‌های o1
 - برنامه‌نویسی
-weight: 2000
+weight: 2001
 og_image: "/posts/introducing_mistral_models/banner.jpeg"
 ---
 
